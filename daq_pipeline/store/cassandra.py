@@ -14,6 +14,19 @@ VALUES
 """
 
 
+class NoBatchSaveProvider(object):
+    def save(self, prep_insert_statement, data):
+        pass
+
+
+class BatchSaveProvider(object):
+    def __init__(self, batch_size):
+        self.batch_size = batch_size
+
+    def save(self, prep_insert_statement, data):
+        pass
+
+
 class CassandraStore(object):
 
     def __init__(self, nodes_addresses, batch_size):
@@ -24,6 +37,11 @@ class CassandraStore(object):
                      self.nodes_addresses, self.batch_size)
 
         _logger.debug("Using INSERT_STATEMENT: %s", INSERT_STATEMENT)
+
+        if self.batch_size < 2:
+            self.save_provider = NoBatchSaveProvider()
+        else:
+            self.save_provider = BatchSaveProvider(self.batch_size)
 
         self.cluster = None
         self.session = None
@@ -57,5 +75,5 @@ class CassandraStore(object):
         self.session = None
         self.prep_insert_statement = None
 
-    def save(data):
-        pass
+    def save(self, data):
+        self.save_provider.save(self.prep_insert_statement, data)
