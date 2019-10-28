@@ -1,7 +1,8 @@
 import logging
 
 from cassandra import ConsistencyLevel
-from cassandra.cluster import Cluster
+from cassandra.cluster import Cluster, Session
+from cassandra.query import PreparedStatement
 
 _logger = logging.getLogger('CassandraStore')
 
@@ -15,16 +16,16 @@ VALUES
 
 
 class NoBatchSaveProvider(object):
-    def save(self, prep_insert_statement, data):
-        pass
+    def save(self, session: Session, prep_insert_statement: PreparedStatement, data):
+        session.execute(prep_insert_statement, data)
 
 
 class BatchSaveProvider(object):
     def __init__(self, batch_size):
         self.batch_size = batch_size
 
-    def save(self, prep_insert_statement, data):
-        pass
+    def save(self, session, prep_insert_statement, data):
+        raise NotImplementedError()
 
 
 class CassandraStore(object):
