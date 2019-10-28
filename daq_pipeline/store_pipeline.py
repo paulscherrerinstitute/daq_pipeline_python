@@ -6,28 +6,6 @@ from daq_pipeline import config
 _logger = logging.getLogger('store_pipeline')
 
 
-class CassandraStore(object):
-    _logger = logging.getLogger('CassandraStore')
-
-    def __init__(self, nodes_addresses, batch_size):
-        self.nodes_addresses = nodes_addresses
-        self.batch_size = batch_size
-
-    def __enter__(self):
-        self.connect()
-
-    def __exit__(self, ex_type, ex_value, traceback):
-        self.close()
-
-    def connect(self):
-        pass
-
-    def close(self):
-        pass
-
-    def save(data):
-        print(data)
-
 
 class MemcachedMetadataSender(object):
     _logger = logging.getLogger('MemcachedMetadataSender')
