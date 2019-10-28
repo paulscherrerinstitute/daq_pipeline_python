@@ -6,33 +6,6 @@ from daq_pipeline import config
 _logger = logging.getLogger('store_pipeline')
 
 
-class BsreadReceiver(object):
-    _logger = logging.getLogger('BsreadReceiver')
-
-    def __init__(self, source_address, connection_mode, receive_timeout):
-        self.source_address = source_address
-        self.connection_mode = connection_mode
-        self.receive_timeout = receive_timeout
-
-    def __enter__(self):
-        self.connect()
-
-    def __exit__(self, ex_type, ex_value, traceback):
-        self.close()
-
-    def connect(self):
-        pass
-
-    def close(self):
-        pass
-
-    def get_data(self):
-        from time import sleep
-        sleep(1)
-
-        return 12345, {'meta':'data'}
-
-
 class CassandraStore(object):
     _logger = logging.getLogger('CassandraStore')
 
