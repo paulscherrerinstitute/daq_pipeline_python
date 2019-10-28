@@ -6,53 +6,6 @@ from daq_pipeline import config
 _logger = logging.getLogger('store_pipeline')
 
 
-
-class MemcachedMetadataSender(object):
-    _logger = logging.getLogger('MemcachedMetadataSender')
-
-    def __init__(self, memcached_address, metadata_send_modulo):
-        self.memcached_address = memcached_address
-        self.metadata_send_modulo = metadata_send_modulo
-
-    def __enter__(self):
-        self.connect()
-
-    def __exit__(self, ex_type, ex_value, traceback):
-        self.close()
-    
-    def connect(self):
-        pass
-
-    def close(self):
-        pass
-
-    def add(self, metadata):
-        pass
-
-
-class LogstashStatsSender(object):
-    _logger = logging.getLogger('LogstashStatsSender')
-
-    def __init__(self, logstash_address, stats_send_interval): 
-        self.logstash_address = logstash_address
-        self.stats_send_interval = stats_send_interval
-
-    def __enter__(self):
-        self.connect()
-
-    def __exit__(self, ex_type, ex_value, traceback):
-        self.close()
-
-    def connect(self):
-        pass
-
-    def close(self):
-        pass
-
-    def add(self, data, metadata):
-        pass
-
-
 def store_pipeline(data_receiver, 
                    data_store, 
                    metadata_sender,
