@@ -10,7 +10,7 @@ class BsreadReceiver(object):
         self.connection_mode = connection_mode
         self.receive_timeout = receive_timeout
 
-        _logger.info("Connecting to source_address=%s and connection_mode=$s with receive_timeout=%s",
+        _logger.info("Instantiating with source_address=%s and connection_mode=$s with receive_timeout=%s",
                      self.source_address, self.connection_mode, self.receive_timeout)
 
     def __enter__(self):
