@@ -1,20 +1,9 @@
-import cassandra
 import logging
 import argparse
 
+from daq_pipeline import config
+
 _logger = logging.getLogger('store_pipeline')
-
-# Just above the minimum normal operational frequency.
-DEFAULT_RECEIVE_TIMEOUT = 1.1
-CASSANDRA_CLUSTER_ADDRESSES = ['sf-nube-12', 'sf-nube-13', 'sf-nube-14']
-MEMCACHED_ADDRESS = 'sf-nube-11'
-LOGSTASH_ADDRESS = 'http://logstash.psi.ch'
-
-DEFAULT_ZMQ_MODE = 'pull'
-DEFAULT_BATCH_SIZE = 1
-DEFAULT_METADATA_SEND_MODULO = 100
-# Interval in seconds.
-DEFAULT_STATS_SEND_INTERVAL = 5
 
 
 class BsreadReceiver(object):
@@ -112,6 +101,7 @@ class LogstashStatsSender(object):
     def add(self, data, metadata):
         pass
 
+
 def store_pipeline(data_receiver, 
                    data_store, 
                    metadata_sender,
@@ -124,10 +114,11 @@ def store_pipeline(data_receiver,
 
             # In case of receive timeout, data and metadata is None.
             if data is None:
-                cassandra_store.save(data)
+                data_store.save(data)
                 metadata_sender.add(metadata)
 
             stats_sender.add(data, metadata)
+
 
 def main():
     parser = argparse.ArgumentParser()
@@ -135,28 +126,32 @@ def main():
     parser.add_argument('source', type=str, 
                         help='Stream address in format "tcp://host:port".')
 
+    zmq_mode = config.DEFAULT_ZMQ_MODE
     parser.add_argument(
         '--mode', choices=['pull', 'sub'], 
-        default=DEFAULT_ZMQ_MODE,
-        help='DEFAULT=%s : ZMQ connection mode.' % DEFAULT_ZMQ_MODE)
+        default=zmq_mode,
+        help='DEFAULT=%s : ZMQ connection mode.' % zmq_mode)
 
+    batch_size = config.DEFAULT_BATCH_SIZE
     parser.add_argument(
         '--batch_size', type=int, 
-        default=DEFAULT_BATCH_SIZE,
-        help='DEFAULT=%s (in pulse_id): ' % DEFAULT_BATCH_SIZE +
+        default=batch_size,
+        help='DEFAULT=%s (in pulse_id): ' % batch_size +
         'N pulse_ids to batch for each insert.'
     )
 
+    meta_send_modulo = config.DEFAULT_METADATA_SEND_MODULO
     parser.add_argument(
         '--metadata_send_modulo', type=int, 
-        default=DEFAULT_METADATA_SEND_MODULO, 
-        help='DEFAULT=%s (in pulse_id) : ' % DEFAULT_METADATA_SEND_MODULO +
+        default=meta_send_modulo,
+        help='DEFAULT=%s (in pulse_id) : ' % meta_send_modulo +
         'Send metadata update every N pulse_ids.')
 
+    stats_send_interval = config.DEFAULT_STATS_SEND_INTERVAL
     parser.add_argument(
         '--stats_send_interval', type=int,
-        default=DEFAULT_STATS_SEND_INTERVAL, 
-        help='DEFAULT=%s (in seconds) : ' % DEFAULT_STATS_SEND_INTERVAL + 
+        default=stats_send_interval,
+        help='DEFAULT=%s (in seconds) : ' % stats_send_interval +
              'Send statistics every N seconds.'
     )
 
@@ -172,25 +167,25 @@ def main():
     
     try:
 
-        receive_timeout = DEFAULT_RECEIVE_TIMEOUT
+        receive_timeout = config.DEFAULT_RECEIVE_TIMEOUT
         _logger.debug('receive_timeout=%s', receive_timeout)
         bsread_receiver = BsreadReceiver(source_address,
                                          connection_mode, 
                                          receive_timeout)
       
         # How many channel data inserts to batch in a single write.
-        nodes_addresses = CASSANDRA_CLUSTER_ADDRESSES
+        nodes_addresses = config.CASSANDRA_CLUSTER_ADDRESSES
         _logger.debug('nodes_addresses=%s', nodes_addresses)
         cassandra_store = CassandraStore(nodes_addresses, batch_size)
 
         # Metadata will be sent when pulse_id % metadata_send_modulo == 0.
-        memcached_address = MEMCACHED_ADDRESS 
+        memcached_address = config.MEMCACHED_ADDRESS
         _logger.debug('memcached_address=%s', memcached_address)
         memcached_meta_sender = MemcachedMetadataSender(memcached_address, 
                                                         metadata_send_modulo)
      
         # Send interval is in seconds.
-        logstash_address = LOGSTASH_ADDRESS
+        logstash_address = config.LOGSTASH_ADDRESS
         _logger.debug('logstash_address=%s', logstash_address)
         logstash_stats_sender = LogstashStatsSender(logstash_address, 
                                                     stats_send_interval)
