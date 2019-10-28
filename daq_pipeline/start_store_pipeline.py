@@ -3,30 +3,13 @@ import argparse
 
 from daq_pipeline import config
 from daq_pipeline.metadata.memcached import MemcachedMetadata
+from daq_pipeline.pipeline.store import store_pipeline
 from daq_pipeline.receiver.bsread import BsreadReceiver
 from daq_pipeline.stats.logstash import LogstashStats
 from daq_pipeline.store.cassandra import CassandraStore
 
-_logger = logging.getLogger('store_pipeline')
 
-
-def store_pipeline(data_receiver,
-                   data_store,
-                   metadata_sender,
-                   stats_sender):
-
-    with data_receiver, data_store, metadata_sender, stats_sender:
-        
-        while True:
-
-            data, metadata = data_receiver.get_data()
-
-            # In case of receive timeout, data and metadata is None.
-            if data is None:
-                data_store.save(data)
-                metadata_sender.add(metadata)
-
-            stats_sender.add(data, metadata)
+_logger = logging.getLogger('start_store_pipeline')
 
 
 def main():
