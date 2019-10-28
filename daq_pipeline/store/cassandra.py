@@ -3,6 +3,14 @@ import logging
 _logger = logging.getLogger('CassandraStore')
 
 
+INSERT_STATEMENT = """
+INSERT INTO channel_data
+    (device_name, pulse_id_mod, channel_name, pulse_id, data, type, shape, encoding, compression)
+VALUES
+    (?, ?, ?, ?, ?, ?, ?, ?, ?)
+"""
+
+
 class CassandraStore(object):
 
     def __init__(self, nodes_addresses, batch_size):
@@ -11,6 +19,8 @@ class CassandraStore(object):
 
         _logger.info("Instantiating with nodes_addresses=%s and batch_size=%s",
                      self.nodes_addresses, self.batch_size)
+
+        _logger.debug("Using INSERT_STATEMENT: %s", INSERT_STATEMENT)
 
     def __enter__(self):
         self.connect()
