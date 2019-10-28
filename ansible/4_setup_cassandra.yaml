@@ -1,0 +1,18 @@
+- hosts: workers
+  become: yes
+  tasks:
+    - name: pull cassandra image
+      shell: docker pull cassandra:3.11.4 
+
+    - name: pull cassandra image
+      shell: docker run --name cassandra-12 -e CASSANDRA_CLUSTER_NAME=sf-daq-test -e CASSANDRA_SEEDS=172.26.120.72,172.26.120.73,172.26.120.74 --net=host -d -v /data/cassandra:/var/lib/cassandra cassandra:3.11.4 
+      when: ansible_hostname == 'sf-nube-12'
+
+    - name: pull cassandra image
+      shell: docker run --name cassandra-13 -e CASSANDRA_CLUSTER_NAME=sf-daq-test -e CASSANDRA_SEEDS=172.26.120.72,172.26.120.73,172.26.120.74 --net=host -d -v /data/cassandra:/var/lib/cassandra cassandra:3.11.4 
+      when: ansible_hostname == 'sf-nube-13'
+
+    - name: pull cassandra image
+      shell: docker run --name cassandra-14 -e CASSANDRA_CLUSTER_NAME=sf-daq-test -e CASSANDRA_SEEDS=172.26.120.72,172.26.120.73,172.26.120.74 --net=host -d -v /data/cassandra:/var/lib/cassandra cassandra:3.11.4
+      when: ansible_hostname == 'sf-nube-14'
+

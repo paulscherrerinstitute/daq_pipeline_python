@@ -1,0 +1,7 @@
+[master]
+master ansible_host=sf-nube-11 
+
+[workers]
+worker12 ansible_host=sf-nube-12 
+worker13 ansible_host=sf-nube-13
+worker14 ansible_host=sf-nube-14
