@@ -27,6 +27,10 @@ class BatchSaveProvider(object):
     def save(self, session, prep_insert_statement, data):
         raise NotImplementedError()
 
+        # batch = BatchStatement(consistency_level=ConsistencyLevel.ANY)
+        # batch.add(prep_insert_statement, data)
+        # session.execute(batch)
+
 
 class CassandraStore(object):
 
