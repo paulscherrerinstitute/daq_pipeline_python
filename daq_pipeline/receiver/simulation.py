@@ -10,7 +10,7 @@ _logger = logging.getLogger('SimulatedReceiver')
 
 
 class SimulatedReceiver(object):
-    def __init__(self, device_name, channels_metadata, target_read_time=0.01):
+    def __init__(self, device_name, channels_metadata, target_read_time=0.001):
         self.device_name = device_name
         self.channels_metadata = channels_metadata
         self.target_read_time = target_read_time
