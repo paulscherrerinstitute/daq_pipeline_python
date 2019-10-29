@@ -16,9 +16,11 @@ _logger = logging.getLogger('start_store_pipeline')
 def main():
     parser = argparse.ArgumentParser()
 
+    source = os.getenv("SOURCE", config.DEFAULT_SOURCE)
     parser.add_argument('--source', type=str,
-                        default=os.getenv("SOURCE", config.DEFAULT_SOURCE),
-                        help='Stream address in format "tcp://host:port".')
+                        default=source,
+                        help='DEFAULT=%s: ' % source +
+                             'Stream address in format "tcp://host:port"')
 
     zmq_mode = os.getenv("ZMQ_MODE", config.DEFAULT_ZMQ_MODE)
     parser.add_argument(
