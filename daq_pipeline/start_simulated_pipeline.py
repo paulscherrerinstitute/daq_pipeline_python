@@ -17,19 +17,19 @@ def main():
     parser = argparse.ArgumentParser()
 
     device_name = os.getenv("DEVICE_NAME")
-    parser.add_argument('--device_name', default=device_name,
+    parser.add_argument('--device_name', type=str, default=device_name,
                         help='Simulated device name')
 
     source_file = os.getenv("SOURCE_FILE", "/sources.json")
-    parser.add_argument('--source_file', type=int, default=source_file,
+    parser.add_argument('--source_file', type=str, default=source_file,
                         help='Simulation sources file')
 
     read_time = os.getenv("READ_TIME", 0.001)
-    parser.add_argument('--read_time', type=int, default=read_time,
+    parser.add_argument('--read_time', type=float, default=read_time,
                         help='Simulation sources file')
 
     iteration_time = os.getenv("ITERATION_TIME", 0.01)
-    parser.add_argument('--read_time', type=int, default=iteration_time,
+    parser.add_argument('--iteration_time', type=float, default=iteration_time,
                         help='Simulation sources file')
 
     batch_size = os.getenv("BATCH_SIZE", config.DEFAULT_BATCH_SIZE)
@@ -59,8 +59,8 @@ def main():
 
     device_name = args.device_name
     source_file = args.source_file
-    read_time = args.source_file
-    iteration_time = args.source_file
+    read_time = args.read_time
+    iteration_time = args.iteration_time
 
     batch_size = args.batch_size
     metadata_send_modulo = args.metadata_send_modulo
@@ -69,8 +69,12 @@ def main():
     _logger.info('Starting simulated_pipeline with arguments: %s', args)
 
     try:
+        with open(source_file, 'r') as input_file:
+            sources = json.load(input_file)
 
-        sources = json.reads(source_file)
+        if device_name not in sources:
+            raise ValueError("device_name=%s not found in sources file." % device_name)
+
         channels_metadata = sources[device_name]
         simulated_receiver = SimulatedReceiver(device_name, channels_metadata, read_time)
 
