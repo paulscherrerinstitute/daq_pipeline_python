@@ -5,6 +5,7 @@ LOGSTASH_ADDRESS = 'http://logstash.psi.ch'
 # Just above the minimum normal operational frequency.
 DEFAULT_RECEIVE_TIMEOUT = 1.1
 
+DEFAULT_SOURCE = "tcp://localhost:8888"
 DEFAULT_ZMQ_MODE = 'pull'
 DEFAULT_BATCH_SIZE = 1
 DEFAULT_METADATA_SEND_MODULO = 100
