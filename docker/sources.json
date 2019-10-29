@@ -1,0 +1,5 @@
+{
+  "device1": [
+     {"name": "scalar_1", "shape": [1], "type": "uint32", "encoding": "little", "compression": null}
+  ]
+}
