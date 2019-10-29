@@ -1,5 +1,6 @@
 import logging
 import argparse
+import os
 
 from daq_pipeline import config
 from daq_pipeline.metadata.memcached import MemcachedMetadata
@@ -15,16 +16,17 @@ _logger = logging.getLogger('start_store_pipeline')
 def main():
     parser = argparse.ArgumentParser()
 
-    parser.add_argument('source', type=str,
+    parser.add_argument('--source', type=str,
+                        default=os.getenv("SOURCE", config.DEFAULT_SOURCE),
                         help='Stream address in format "tcp://host:port".')
 
-    zmq_mode = config.DEFAULT_ZMQ_MODE
+    zmq_mode = os.getenv("ZMQ_MODE", config.DEFAULT_ZMQ_MODE)
     parser.add_argument(
         '--mode', choices=['pull', 'sub'],
         default=zmq_mode,
         help='DEFAULT=%s : ZMQ connection mode.' % zmq_mode)
 
-    batch_size = config.DEFAULT_BATCH_SIZE
+    batch_size = os.getenv("BATCH_SIZE", config.DEFAULT_BATCH_SIZE)
     parser.add_argument(
         '--batch_size', type=int,
         default=batch_size,
@@ -32,14 +34,14 @@ def main():
              'N pulse_ids to batch for each insert.'
     )
 
-    meta_send_modulo = config.DEFAULT_METADATA_SEND_MODULO
+    meta_send_modulo = os.getenv("METADATA_SEND_MODULO", config.DEFAULT_METADATA_SEND_MODULO)
     parser.add_argument(
         '--metadata_send_modulo', type=int,
         default=meta_send_modulo,
         help='DEFAULT=%s (in pulse_id) : ' % meta_send_modulo +
              'Send metadata update every N pulse_ids.')
 
-    stats_send_interval = config.DEFAULT_STATS_SEND_INTERVAL
+    stats_send_interval = os.getenv("STATS_SEND_INTERVAL", config.DEFAULT_STATS_SEND_INTERVAL)
     parser.add_argument(
         '--stats_send_interval', type=int,
         default=stats_send_interval,
