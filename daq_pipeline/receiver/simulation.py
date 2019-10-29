@@ -10,7 +10,7 @@ _logger = logging.getLogger('SimulatedReceiver')
 
 
 class SimulatedReceiver(object):
-    def __init__(self, device_name, channels_metadata, target_read_time=0.03):
+    def __init__(self, device_name, channels_metadata, target_read_time=0.01):
         self.device_name = device_name
         self.channels_metadata = channels_metadata
         self.target_read_time = target_read_time
@@ -18,6 +18,8 @@ class SimulatedReceiver(object):
         _logger.info("Simulating device_name=%s with channels_metadata=%s", self.device_name, self.channels_metadata)
 
         self.current_pulse_id = int(time())
+        self.iter_counter = 1
+        self.start_time = 0
 
     def __enter__(self):
         pass
@@ -35,7 +37,9 @@ class SimulatedReceiver(object):
         return raw_data.tobytes()
 
     def get_data(self):
-        start_time = time()
+
+        if self.iter_counter == 1:
+            self.start_time = time()
 
         self.current_pulse_id += 1
         pulse_id = self.current_pulse_id
@@ -63,7 +67,10 @@ class SimulatedReceiver(object):
                  compression)
             )
 
-        delta = (time() - start_time) - self.target_read_time
+        delta = (time() - self.start_time) - (self.target_read_time * self.iter_counter)
+
+        self.iter_counter %= 100
+        self.iter_counter += 1
 
         if delta < 0:
             sleep(-delta)
