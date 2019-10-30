@@ -7,6 +7,7 @@ from cassandra.query import PreparedStatement
 _logger = logging.getLogger('CassandraStore')
 
 
+
 INSERT_STATEMENT = """
 INSERT INTO bsread_data.channel_data
     (device_name, pulse_id_mod, channel_name, pulse_id, data, type, shape, encoding, compression)
@@ -17,6 +18,7 @@ VALUES
 
 class NoBatchSaveProvider(object):
     def save(self, session: Session, prep_insert_statement: PreparedStatement, data):
+        _logger.debug("Executing insert statement.")
         session.execute(prep_insert_statement, data)
 
 
