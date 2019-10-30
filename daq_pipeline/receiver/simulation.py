@@ -75,4 +75,4 @@ class SimulatedReceiver(object):
         if delta < 0:
             sleep(-delta)
 
-        return data
+        return data, None
