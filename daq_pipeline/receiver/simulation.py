@@ -45,6 +45,7 @@ class SimulatedReceiver(object):
         pulse_id = self.current_pulse_id
 
         data = []
+        channels = []
 
         for channel_metadata in self.channels_metadata:
             channel_name = channel_metadata["name"]
@@ -67,6 +68,8 @@ class SimulatedReceiver(object):
                  compression)
             )
 
+            channels.append(channel_name)
+
         delta = (time() - self.start_time) - (self.target_read_time * self.iter_counter)
 
         self.iter_counter %= 100
@@ -75,4 +78,5 @@ class SimulatedReceiver(object):
         if delta < 0:
             sleep(-delta)
 
-        return data, None
+        return data, {"pulse_id": pulse_id,
+                      "channels": channels}
