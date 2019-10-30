@@ -66,6 +66,9 @@ def main():
     metadata_send_modulo = args.metadata_send_modulo
     stats_send_interval = args.stats_send_interval
 
+    logging.getLogger("MemcachedMetadata").setLevel(logging.DEBUG)
+    logging.getLogger("CassandraStore").setLevel(logging.DEBUG)
+
     _logger.info('Starting simulated_pipeline with arguments: %s', args)
 
     try:
