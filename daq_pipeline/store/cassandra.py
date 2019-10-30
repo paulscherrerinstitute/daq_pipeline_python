@@ -1,7 +1,8 @@
 import logging
 
 from cassandra import ConsistencyLevel
-from cassandra.cluster import Cluster, Session
+from cassandra.cluster import Cluster, Session, TokenAwarePolicy
+from cassandra.policies import DCAwareRoundRobinPolicy
 from cassandra.query import PreparedStatement
 
 _logger = logging.getLogger('CassandraStore')
@@ -18,7 +19,6 @@ VALUES
 
 class NoBatchSaveProvider(object):
     def save(self, session: Session, prep_insert_statement: PreparedStatement, data):
-        _logger.debug("Executing insert statement.")
         session.execute(prep_insert_statement, data)
 
 
@@ -63,7 +63,9 @@ class CassandraStore(object):
     def connect(self):
         _logger.debug("Connecting to %s", self.nodes_addresses)
 
-        self.cluster = Cluster(self.nodes_addresses)
+        load_balancing_policy = TokenAwarePolicy(DCAwareRoundRobinPolicy())
+        self.cluster = Cluster(self.nodes_addresses,
+                               load_balancing_policy=load_balancing_policy)
         self.session = self.cluster.connect()
 
         self.prep_insert_statement = self.session.prepare(INSERT_STATEMENT)
@@ -83,4 +85,7 @@ class CassandraStore(object):
         self.prep_insert_statement = None
 
     def save(self, data):
-        self.save_provider.save(self.prep_insert_statement, data)
+        _logger.debug("Saving data to cassandra")
+        self.save_provider.save(self.session,
+                                self.prep_insert_statement,
+                                data)
