@@ -3,10 +3,9 @@ import logging
 from cassandra import ConsistencyLevel
 from cassandra.cluster import Cluster, Session, TokenAwarePolicy
 from cassandra.policies import DCAwareRoundRobinPolicy
-from cassandra.query import PreparedStatement
+from cassandra.query import PreparedStatement, BatchStatement
 
 _logger = logging.getLogger('CassandraStore')
-
 
 
 INSERT_STATEMENT = """
@@ -19,7 +18,12 @@ VALUES
 
 class NoBatchSaveProvider(object):
     def save(self, session: Session, prep_insert_statement: PreparedStatement, data):
-        session.execute(prep_insert_statement, data)
+        batch = BatchStatement(consistency_level=ConsistencyLevel.ANY)
+
+        for channel_data in data:
+            batch.add(prep_insert_statement, channel_data)
+
+        session.execute(batch)
 
 
 class BatchSaveProvider(object):
