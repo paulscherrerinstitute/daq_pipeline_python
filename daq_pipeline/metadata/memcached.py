@@ -9,6 +9,9 @@ class MemcachedMetadata(object):
         self.memcached_address = memcached_address
         self.metadata_send_modulo = metadata_send_modulo
 
+        _logger.info("memcached_address=%s, metadata_send_modulo=%s",
+                     self.memcached_address, self.metadata_send_modulo)
+
     def __enter__(self):
         self.connect()
 
@@ -22,4 +25,4 @@ class MemcachedMetadata(object):
         pass
 
     def add(self, metadata):
-        pass
+        _logger.debug("Adding metadata=%s", metadata)
