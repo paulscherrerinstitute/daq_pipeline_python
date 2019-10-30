@@ -15,15 +15,18 @@ def simulated_pipeline(data_receiver,
         iter_counter = 1
         start_time = None
 
+        _logger.debug("Starting pipeline")
+
         while True:
 
             if iter_counter == 1:
                 start_time = time()
 
             data, metadata = data_receiver.get_data()
+            _logger.debug("Received pulse_id=%s", metadata["pulse_id"])
 
             # In case of receive timeout, data and metadata is None.
-            if data is None:
+            if data is not None:
                 data_store.save(data)
                 metadata_sender.add(metadata)
 
