@@ -1,0 +1,29 @@
+{
+	"kind": "Pod",
+	"apiVersion": "v1",
+	"metadata": {
+		"name": "device1",
+		"labels": {
+			"app": "simulated_pipeline"
+		}
+	},
+	"spec": {
+		"containers": [
+			{
+				"name": "simulated-pipeline-container",
+				"image": "paulscherrerinstitute/daq_pipeline_python",
+				"command": [
+					"python",
+					"start_simulated_pipeline.py"
+				],
+				"env": [
+					{
+						"name": "DEVICE_NAME",
+						"value": "device1"
+					}
+				]
+			}
+		],
+        "restartPolicy": "Never"
+	}
+}
