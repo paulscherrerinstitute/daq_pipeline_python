@@ -58,7 +58,7 @@ class SimulatedReceiver(object):
 
             data.append(
                 (self.device_name,
-                 pulse_id % config.CHANNEL_DATA_PARTITION_MODULO,
+                 pulse_id // config.CHANNEL_DATA_PARTITION_MODULO,
                  channel_name,
                  pulse_id,
                  raw_data,
