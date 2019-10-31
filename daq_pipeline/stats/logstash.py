@@ -1,4 +1,5 @@
 import logging
+from collections import defaultdict
 from time import time
 
 _logger = logging.getLogger('LogstashStats')
@@ -9,6 +10,8 @@ class LogstashStats(object):
     def __init__(self, logstash_address, stats_send_interval):
         self.logstash_address = logstash_address
         self.stats_send_interval = stats_send_interval
+
+        self.stats_cache = defaultdict(lambda: [0, 0])
 
         self.start_time = None
         self.n_messages = 0
@@ -25,17 +28,41 @@ class LogstashStats(object):
     def close(self):
         pass
 
-    def add(self, data, metadata):
+    def _add_stats_to_cache(self, stats_data):
+
+        for stats_name, value in stats_data.items():
+            field = self.stats_cache[stats_name]
+
+            # Holds the sum of the values.
+            field[0] += value
+            # Holds the number of values in the first field.
+            field[1] += 1
+
+    def _get_stats_from_cache(self):
+
+        result = {}
+
+        for stat_name, values in self.stats_cache.items():
+            value_sum = values[0]
+            n_elements_in_sum = values[1]
+
+            result[stat_name] = value_sum/n_elements_in_sum
+
+        self.stats_cache.clear()
+
+        return result
+
+    def add(self, stats_data):
+
+        self._add_stats_to_cache(stats_data)
 
         if self.start_time is None:
             self.start_time = time()
 
-        self.n_messages += 1
         current_time = time()
 
         if current_time-self.start_time > self.stats_send_interval:
 
-            _logger.info("Processing rate: %s Hz", self.n_messages/self.stats_send_interval)
+            _logger.info("Stats: %s", self._get_stats_from_cache())
 
-            self.n_messages = 0
             self.start_time = current_time
