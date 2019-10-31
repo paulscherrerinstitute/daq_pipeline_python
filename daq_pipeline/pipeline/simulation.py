@@ -39,11 +39,11 @@ def simulated_pipeline(data_receiver,
 
             # In case of receive timeout, data and metadata is None.
             if data is not None:
-                start_time("save")
+                start_timer("save")
                 data_store.save(data)
                 stats_save_time = get_timer_delta("save")
 
-                start_time("add_metadata")
+                start_timer("add_metadata")
                 metadata_sender.add(metadata)
                 stats_add_metadata_time = get_timer_delta("add_metadata")
 
