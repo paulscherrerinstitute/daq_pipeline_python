@@ -52,6 +52,7 @@ def simulated_pipeline(data_receiver,
                 "get_data": stats_get_data_time,
                 "save": stats_save_time,
                 "add_metadata": stats_add_metadata_time,
+                "n_data_bytes": metadata["n_data_bytes"]
             })
 
             delta = (time() - start_time) - (target_iteration_time * iter_counter)
