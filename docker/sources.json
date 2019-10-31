@@ -1,5 +1,14 @@
 {
   "device1": [
-     {"name": "scalar_1", "shape": [1], "type": "uint32", "encoding": "little", "compression": null}
+     {"name": "scalar_1", "shape": [1], "type": "uint32", "encoding": "little", "compression": null},
+     {"name": "scalar_2", "shape": [1], "type": "uint32", "encoding": "little", "compression": null},
+     {"name": "scalar_3", "shape": [1], "type": "uint32", "encoding": "little", "compression": null},
+     {"name": "scalar_4", "shape": [1], "type": "uint32", "encoding": "little", "compression": null},
+     {"name": "scalar_5", "shape": [1], "type": "uint64", "encoding": "little", "compression": null},
+     {"name": "scalar_6", "shape": [1], "type": "uint64", "encoding": "little", "compression": null},
+     {"name": "scalar_7", "shape": [1], "type": "uint64", "encoding": "little", "compression": null},
+     {"name": "scalar_8", "shape": [1], "type": "uint64", "encoding": "little", "compression": null},
+     {"name": "scalar_9", "shape": [1], "type": "uint64", "encoding": "little", "compression": null},
+     {"name": "scalar_10", "shape": [1], "type": "uint64", "encoding": "little", "compression": null}
   ]
 }
