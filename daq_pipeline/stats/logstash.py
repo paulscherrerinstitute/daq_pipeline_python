@@ -35,7 +35,7 @@ class LogstashStats(object):
 
         if current_time-self.start_time > self.stats_send_interval:
 
-            print("Processing rate(Hz):", self.n_messages/self.stats_send_interval)
+            _logger.info("Processing rate: %s Hz", self.n_messages/self.stats_send_interval)
 
             self.n_messages = 0
             self.start_time = current_time
