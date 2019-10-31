@@ -43,6 +43,9 @@ class SimulatedReceiver(object):
 
         self.current_pulse_id += 1
         pulse_id = self.current_pulse_id
+        pulse_id_modulo = pulse_id // config.CHANNEL_DATA_PARTITION_MODULO
+
+        _logger.debug("Generating source device_name=%s pulse_id_modulo=%s pulse_id=%s")
 
         data = []
         channels = []
@@ -59,7 +62,7 @@ class SimulatedReceiver(object):
 
             data.append(
                 (self.device_name,
-                 pulse_id // config.CHANNEL_DATA_PARTITION_MODULO,
+                 pulse_id_modulo,
                  channel_name,
                  pulse_id,
                  raw_data,
