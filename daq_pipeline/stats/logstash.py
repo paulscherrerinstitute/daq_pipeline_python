@@ -38,7 +38,7 @@ class LogstashStats(object):
             # Holds the number of values in the first field.
             field[1] += 1
 
-    def _get_stats_from_cache(self):
+    def _get_stats_from_cache(self, time_delta=None):
 
         result = {}
 
@@ -47,6 +47,10 @@ class LogstashStats(object):
             n_elements_in_sum = values[1]
 
             result[stat_name] = value_sum/n_elements_in_sum
+
+        if time_delta and "iteration" in self.stats_cache:
+            n_values = self.stats_cache["iteration"][1]
+            result["rep_rate"] = n_values / time_delta
 
         self.stats_cache.clear()
 
@@ -60,9 +64,10 @@ class LogstashStats(object):
             self.start_time = time()
 
         current_time = time()
+        delta = current_time - self.start_time
 
-        if current_time-self.start_time > self.stats_send_interval:
+        if delta > self.stats_send_interval:
 
-            _logger.info("Stats: %s", self._get_stats_from_cache())
+            _logger.info("Stats: %s", self._get_stats_from_cache(delta))
 
             self.start_time = current_time
