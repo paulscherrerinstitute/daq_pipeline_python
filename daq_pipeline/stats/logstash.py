@@ -48,9 +48,13 @@ class LogstashStats(object):
 
             result[stat_name] = value_sum/n_elements_in_sum
 
-        if time_delta and "iteration" in self.stats_cache:
-            n_values = self.stats_cache["iteration"][1]
-            result["rep_rate"] = n_values / time_delta
+        if "iteration" in self.stats_cache:
+
+            result["duty_cycle_utilization"] = result["iteration"] / 0.01
+
+            if time_delta is not None:
+                n_values = self.stats_cache["iteration"][1]
+                result["rep_rate"] = n_values / time_delta
 
         self.stats_cache.clear()
 
