@@ -45,7 +45,8 @@ class SimulatedReceiver(object):
         pulse_id = self.current_pulse_id
         pulse_id_modulo = pulse_id // config.CHANNEL_DATA_PARTITION_MODULO
 
-        _logger.debug("Generating source device_name=%s pulse_id_modulo=%s pulse_id=%s")
+        _logger.debug("Generating source device_name=%s pulse_id_modulo=%s pulse_id=%s",
+                      self.device_name, pulse_id_modulo, pulse_id)
 
         data = []
         channels = []
