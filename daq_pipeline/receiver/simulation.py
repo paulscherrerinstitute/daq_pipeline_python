@@ -54,10 +54,10 @@ class SimulatedReceiver(object):
 
         for channel_metadata in self.channels_metadata:
             channel_name = channel_metadata["name"]
-            shape = channel_metadata["shape"]
-            type = channel_metadata["type"]
-            encoding = channel_metadata["encoding"]
-            compression = channel_metadata["compression"]
+            shape = channel_metadata.get("shape", [1])
+            type = channel_metadata.get("type", "float64")
+            encoding = channel_metadata.get("encoding", "little")
+            compression = channel_metadata.get("compression", None)
 
             raw_data = self._generate_data(shape, type)
 

@@ -71,6 +71,7 @@ def main():
     # logging.getLogger("CassandraStore").setLevel(logging.DEBUG)
     # logging.getLogger("simulated_pipeline").setLevel(logging.DEBUG)
     logging.getLogger("LogstashStats").setLevel(logging.DEBUG)
+    # logging.getLogger("SimulatedReceiver").setLevel(logging.DEBUG)
 
     _logger.info('Starting simulated_pipeline with arguments: %s', args)
 
