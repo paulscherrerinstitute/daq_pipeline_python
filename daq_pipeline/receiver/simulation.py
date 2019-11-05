@@ -29,6 +29,15 @@ class SimulatedReceiver(object):
 
     def _generate_data(self, shape, type):
 
+        if type == "string":
+            return "this is just a random string" \
+                   "this is just a random string" \
+                   "this is just a random string".encode()
+
+        # Downgrade images to arrays.
+        if len(shape) > 1:
+            shape = shape[0]
+
         raw_data = numpy.zeros(shape=shape, dtype=type)
 
         random_value = randint(0, 100)
@@ -53,6 +62,7 @@ class SimulatedReceiver(object):
         n_data_bytes = 0
 
         for channel_metadata in self.channels_metadata:
+
             channel_name = channel_metadata["name"]
             shape = channel_metadata.get("shape", [1])
             type = channel_metadata.get("type", "float64")
