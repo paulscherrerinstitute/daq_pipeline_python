@@ -1,4 +1,5 @@
 import logging
+from time import time
 
 from cassandra import ConsistencyLevel
 from cassandra.cluster import Cluster, Session, TokenAwarePolicy
@@ -6,7 +7,6 @@ from cassandra.policies import DCAwareRoundRobinPolicy
 from cassandra.query import PreparedStatement, BatchStatement
 
 _logger = logging.getLogger('CassandraStore')
-
 
 INSERT_STATEMENT = """
 INSERT INTO bsread_data.channel_data
@@ -17,13 +17,36 @@ VALUES
 
 
 class NoBatchSaveProvider(object):
+
+    def __init__(self):
+        self.future_cache = set()
+
     def save(self, session: Session, prep_insert_statement: PreparedStatement, data):
+        device_name = data[0]
+        pulse_id = data[3]
+
         batch = BatchStatement(consistency_level=ConsistencyLevel.ANY)
 
         for channel_data in data:
             batch.add(prep_insert_statement, channel_data)
 
-        session.execute(batch)
+        def success_insert(future, pulse_id, device_name):
+            self.future_cache.remove(future)
+
+            _logger.debug("Inserted pulse_id=%s for device_name=%s", pulse_id, device_name)
+
+        def failed_insert(future, pulse_id, device_name):
+            self.future_cache.remove(future)
+
+            _logger.error("Could not insert pulse_id=%s for device_name=%s", pulse_id, device_name)
+
+        future = session.execute_async(batch)
+
+        self.future_cache.add(future)
+        future.add_callbacks(callback=success_insert, callback_args=(future, pulse_id, device_name),
+                             errback=failed_insert, errback_args=(future, pulse_id, device_name))
+
+        return len(self.future_cache)
 
 
 class BatchSaveProvider(object):
@@ -90,6 +113,6 @@ class CassandraStore(object):
 
     def save(self, data):
         _logger.debug("Saving data to cassandra")
-        self.save_provider.save(self.session,
-                                self.prep_insert_statement,
-                                data)
+        return self.save_provider.save(self.session,
+                                       self.prep_insert_statement,
+                                       data)
