@@ -4,7 +4,7 @@ from time import time
 from cassandra import ConsistencyLevel
 from cassandra.cluster import Cluster, Session, TokenAwarePolicy
 from cassandra.policies import DCAwareRoundRobinPolicy
-from cassandra.query import PreparedStatement, BatchStatement
+from cassandra.query import PreparedStatement, BatchStatement, BatchType
 
 _logger = logging.getLogger('CassandraStore')
 
@@ -22,23 +22,27 @@ class NoBatchSaveProvider(object):
         self.future_cache = set()
 
     def save(self, session: Session, prep_insert_statement: PreparedStatement, data):
-        device_name = data[0]
-        pulse_id = data[3]
 
-        batch = BatchStatement(consistency_level=ConsistencyLevel.ANY)
+        if data is None:
+            raise ValueError("Cannot save None data to Cassandra.")
+
+        device_name = data[0][0]
+        pulse_id = data[0][3]
+
+        batch = BatchStatement(consistency_level=ConsistencyLevel.ANY, batch_type=BatchType.UNLOGGED)
 
         for channel_data in data:
-            batch.add(prep_insert_statement, channel_data)
+            session.execute_async(prep_insert_statement, channel_data)
 
-        def success_insert(future, pulse_id, device_name):
+        def success_insert(results, future, pulse_id, device_name):
             self.future_cache.remove(future)
 
             _logger.debug("Inserted pulse_id=%s for device_name=%s", pulse_id, device_name)
 
-        def failed_insert(future, pulse_id, device_name):
+        def failed_insert(e, future, pulse_id, device_name):
             self.future_cache.remove(future)
 
-            _logger.error("Could not insert pulse_id=%s for device_name=%s", pulse_id, device_name)
+            _logger.error("Could not insert pulse_id=%s for device_name=%s", pulse_id, device_name, e)
 
         future = session.execute_async(batch)
 

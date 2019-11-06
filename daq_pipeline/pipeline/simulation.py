@@ -23,6 +23,7 @@ def simulated_pipeline(data_receiver,
         stats_iteration_time = 0.01
         stats_save_time = 0.01
         stats_add_metadata_time = 0.01
+        n_pending_inserts = 0
 
         while True:
 
@@ -40,7 +41,7 @@ def simulated_pipeline(data_receiver,
             # In case of receive timeout, data and metadata is None.
             if data is not None:
                 start_timer("save")
-                data_store.save(data)
+                n_pending_inserts = data_store.save(data)
                 stats_save_time = get_timer_delta("save")
 
                 start_timer("add_metadata")
@@ -52,7 +53,8 @@ def simulated_pipeline(data_receiver,
                 "get_data": stats_get_data_time,
                 "save": stats_save_time,
                 "add_metadata": stats_add_metadata_time,
-                "n_data_bytes": metadata["n_data_bytes"]
+                "n_data_bytes": metadata["n_data_bytes"],
+                "n_pending_inserts": n_pending_inserts
             })
 
             delta = (time() - start_time) - (target_iteration_time * iter_counter)
