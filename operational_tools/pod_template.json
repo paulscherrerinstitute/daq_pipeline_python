@@ -2,7 +2,7 @@
 	"kind": "Pod",
 	"apiVersion": "v1",
 	"metadata": {
-		"name": "device1",
+		"name": "{{DEVICE_NAME}}",
 		"labels": {
 			"app": "simulated_pipeline"
 		}
@@ -18,8 +18,8 @@
 				],
 				"env": [
 					{
-						"name": "DEVICE_NAME",
-						"value": "device1"
+						"name": "READ_TIME",
+						"value": "0.003"
 					}
 				]
 			}
