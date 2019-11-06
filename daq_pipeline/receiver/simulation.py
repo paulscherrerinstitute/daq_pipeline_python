@@ -20,6 +20,7 @@ class SimulatedReceiver(object):
         self.current_pulse_id = int(time())
         self.iter_counter = 1
         self.start_time = 0
+        self.cache = {}
 
     def __enter__(self):
         pass
@@ -29,21 +30,25 @@ class SimulatedReceiver(object):
 
     def _generate_data(self, shape, type):
 
-        if type == "string":
-            return "this is just a random string" \
-                   "this is just a random string" \
-                   "this is just a random string".encode()
+        if (tuple(shape), type) not in self.cache:
 
-        # Downgrade images to arrays.
-        if len(shape) > 1:
-            shape = shape[0]
+            if type == "string":
+                return "this is just a random string" \
+                       "this is just a random string" \
+                       "this is just a random string".encode()
 
-        raw_data = numpy.zeros(shape=shape, dtype=type)
+            # Downgrade images to arrays.
+            if len(shape) > 1:
+                shape = shape[0]
 
-        random_value = randint(0, 100)
-        raw_data += random_value
+            raw_data = numpy.zeros(shape=shape, dtype=type)
 
-        return raw_data.tobytes()
+            random_value = randint(0, 100)
+            raw_data += random_value
+
+            self.cache[(tuple(shape), type)] = raw_data.tobytes()
+
+        return self.cache[(tuple(shape), type)]
 
     def get_data(self):
 
