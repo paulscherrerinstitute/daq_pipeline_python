@@ -77,9 +77,8 @@ class SimulatedReceiver(object):
             raw_data = self._generate_data(shape, type)
 
             data.append(
-                (self.device_name,
+                (channel_name,
                  pulse_id_modulo,
-                 channel_name,
                  pulse_id,
                  raw_data,
                  type,
