@@ -1,0 +1,18 @@
+- hosts: workers
+  become: yes
+  tasks:
+    - name: pull scylladb image
+      shell: docker pull scylladb/scylla:3.1.1
+
+    - name: pull scylladb image
+      shell: docker run --name scylladb-12 -e CASSANDRA_CLUSTER_NAME=sf-daq-test  --net=host -d -v /data/cassandra:/var/lib/scylla scylladb/scylla:3.1.1 --seeds 172.26.120.72,172.26.120.73,172.26.120.74
+      when: ansible_hostname == 'sf-nube-12'
+
+    - name: pull scylladb image
+      shell: docker run --name scylladb-13 -e CASSANDRA_CLUSTER_NAME=sf-daq-test -e CASSANDRA_SEEDS=172.26.120.72,172.26.120.73,172.26.120.74 --net=host -d -v /data/cassandra:/var/lib/cassandra scylladb/scylla:3.1.1
+      when: ansible_hostname == 'sf-nube-13'
+
+    - name: pull scylladb image
+      shell: docker run --name scylladb-14 -e CASSANDRA_CLUSTER_NAME=sf-daq-test -e CASSANDRA_SEEDS=172.26.120.72,172.26.120.73,172.26.120.74 --net=host -d -v /data/cassandra:/var/lib/cassandra scylladb/scylla:3.1.1
+      when: ansible_hostname == 'sf-nube-14'
+
