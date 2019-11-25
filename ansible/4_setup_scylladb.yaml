@@ -5,14 +5,14 @@
       shell: docker pull scylladb/scylla:3.1.1
 
     - name: Run scylladb on sf-nube-12
-      shell: docker run --name scylladb-12 -e CASSANDRA_CLUSTER_NAME=sf-daq-test --net=host -d -v /data/cassandra:/var/lib/scylla scylladb/scylla:3.1.1 --seeds 172.26.120.72,172.26.120.73,172.26.120.74 --broadcast-address 172.26.120.72 --cpuset 0-10 --overprovisioned
+      shell: docker run --name scylladb-12 -e CASSANDRA_CLUSTER_NAME=sf-daq-test --net=host -d -v /data/cassandra:/var/lib/scylla scylladb/scylla:3.1.1 --seeds 172.26.120.72,172.26.120.73,172.26.120.74 --broadcast-address 172.26.120.72 --cpuset 0-10 --overprovisioned 1
       when: ansible_hostname == 'sf-nube-12'
 
     - name: Run scylladb on sf-nube-13
-      shell: docker run --name scylladb-13 -e CASSANDRA_CLUSTER_NAME=sf-daq-test --net=host -d -v /data/cassandra:/var/lib/scylla scylladb/scylla:3.1.1 --seeds 172.26.120.72,172.26.120.73,172.26.120.74 --broadcast-address 172.26.120.73 --cpuset 0-10 --overprovisioned
+      shell: docker run --name scylladb-13 -e CASSANDRA_CLUSTER_NAME=sf-daq-test --net=host -d -v /data/cassandra:/var/lib/scylla scylladb/scylla:3.1.1 --seeds 172.26.120.72,172.26.120.73,172.26.120.74 --broadcast-address 172.26.120.73 --cpuset 0-10 --overprovisioned 1
       when: ansible_hostname == 'sf-nube-13'
 
     - name: Run scylladb on sf-nube-14
-      shell: docker run --name scylladb-14 -e CASSANDRA_CLUSTER_NAME=sf-daq-test --net=host -d -v /data/cassandra:/var/lib/scylla scylladb/scylla:3.1.1 --seeds 172.26.120.72,172.26.120.73,172.26.120.74 --broadcast-address 172.26.120.74 --cpuset 0-10 --overprovisioned
+      shell: docker run --name scylladb-14 -e CASSANDRA_CLUSTER_NAME=sf-daq-test --net=host -d -v /data/cassandra:/var/lib/scylla scylladb/scylla:3.1.1 --seeds 172.26.120.72,172.26.120.73,172.26.120.74 --broadcast-address 172.26.120.74 --cpuset 0-10 --overprovisioned 1
       when: ansible_hostname == 'sf-nube-14'
 
