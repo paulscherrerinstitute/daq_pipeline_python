@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
 
-kubectl --insecure-skip-tls-verify="true" delete -n default pod device1
-kubectl --insecure-skip-tls-verify="true" apply -f pod_template.json
+N_PODS=${1:-999}
+echo "Creating first" "${N_PODS}" " pipelines."
+ls -ld sources/* | awk '{print $9}' | head -n ${N_PODS} | xargs -L 1 kubectl --insecure-skip-tls-verify="true" apply -f
+
