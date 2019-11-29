@@ -1,4 +1,5 @@
 import logging
+from collections import deque, defaultdict
 from time import time
 
 from cassandra import ConsistencyLevel
@@ -10,9 +11,9 @@ _logger = logging.getLogger('CassandraStore')
 
 INSERT_STATEMENT = """
 INSERT INTO bsread_data.channel_data
-    (device_name, pulse_id_mod, channel_name, pulse_id, data, type, shape, encoding, compression)
+    (channel_name, pulse_id_mod, pulse_id, data, type, shape, encoding, compression)
 VALUES
-    (?, ?, ?, ?, ?, ?, ?, ?, ?)
+    (?, ?, ?, ?, ?, ?, ?, ?)
 """
 
 
@@ -20,49 +21,98 @@ class NoBatchSaveProvider(object):
 
     def __init__(self):
         self.future_cache = set()
+        self.data_cache = defaultdict(list)
+        self.cache_counter = 0
 
     def save(self, session: Session, prep_insert_statement: PreparedStatement, data):
 
         if data is None:
             raise ValueError("Cannot save None data to Cassandra.")
 
-        device_name = data[0][0]
-        pulse_id = data[0][3]
-
-        batch = BatchStatement(consistency_level=ConsistencyLevel.ANY, batch_type=BatchType.UNLOGGED)
-
         for channel_data in data:
-            session.execute_async(prep_insert_statement, channel_data)
+            channel_name = channel_data[0]
+            self.data_cache[channel_name].append(channel_data)
 
-        def success_insert(results, future, pulse_id, device_name):
+        self.cache_counter += 1
+
+        if self.cache_counter < 10:
+            return len(self.future_cache)
+
+        def success_insert(results, future, pulse_id, channel_name):
             self.future_cache.remove(future)
 
-            _logger.debug("Inserted pulse_id=%s for device_name=%s", pulse_id, device_name)
+            _logger.debug("Inserted pulse_id=%s for channel_name=%s", pulse_id, channel_name)
 
-        def failed_insert(e, future, pulse_id, device_name):
+        def failed_insert(e, future, pulse_id, channel_name):
             self.future_cache.remove(future)
 
-            _logger.error("Could not insert pulse_id=%s for device_name=%s", pulse_id, device_name, e)
+            _logger.error("ERRRO IN %s. %s", channel_name, e)
 
-        future = session.execute_async(batch)
+        for channel_name, data in self.data_cache.items():
+            batch = BatchStatement(batch_type=BatchType.UNLOGGED)
 
-        self.future_cache.add(future)
-        future.add_callbacks(callback=success_insert, callback_args=(future, pulse_id, device_name),
-                             errback=failed_insert, errback_args=(future, pulse_id, device_name))
+            for pulse_data in data:
+                batch.add(prep_insert_statement, pulse_data)
+
+            future = session.execute_async(batch)
+            future.add_callbacks(callback=success_insert, callback_args=(future, 1, channel_name),
+                                 errback=failed_insert, errback_args=(future, 1, channel_name))
+
+            self.future_cache.add(future)
+
+        self.data_cache.clear()
+        self.cache_counter = 0
 
         return len(self.future_cache)
 
 
 class BatchSaveProvider(object):
-    def __init__(self, batch_size):
-        self.batch_size = batch_size
 
-    def save(self, session, prep_insert_statement, data):
-        raise NotImplementedError()
+    def __init__(self):
+        self.future_cache = set()
+        self.data_cache = defaultdict(list)
+        self.cache_counter = 0
 
-        # batch = BatchStatement(consistency_level=ConsistencyLevel.ANY)
-        # batch.add(prep_insert_statement, data)
-        # session.execute(batch)
+    def save(self, session: Session, prep_insert_statement: PreparedStatement, data):
+
+        if data is None:
+            raise ValueError("Cannot save None data to Cassandra.")
+
+        for channel_data in data:
+            channel_name = channel_data[0]
+            self.data_cache[channel_name].append(channel_data)
+
+        self.cache_counter += 1
+
+        if self.cache_counter < 100:
+            return len(self.future_cache)
+
+        def success_insert(results, future, pulse_id, channel_name):
+            self.future_cache.remove(future)
+
+            _logger.debug("Inserted pulse_id=%s for channel_name=%s", pulse_id, channel_name)
+
+        def failed_insert(e, future, pulse_id, channel_name):
+            self.future_cache.remove(future)
+
+            _logger.error("ERRRO IN %s. %s", channel_name, e)
+
+        for channel_name, data in self.data_cache.items():
+            batch = BatchStatement(batch_type=BatchType.UNLOGGED)
+
+            for pulse_data in data:
+                batch.add(prep_insert_statement, pulse_data)
+
+            future = session.execute_async(batch)
+            future.add_callbacks(callback=success_insert, callback_args=(future, 1, channel_name),
+                                 errback=failed_insert, errback_args=(future, 1, channel_name))
+
+            self.future_cache.add(future)
+
+        self.data_cache.clear()
+        self.cache_counter = 0
+
+        return len(self.future_cache)
 
 
 class CassandraStore(object):
