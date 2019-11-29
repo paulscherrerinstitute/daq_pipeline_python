@@ -1,4 +1,4 @@
-CREATE KEYSPACE bsread_data WITH REPLICATION = { 'class' : 'SimpleStrategy', 'replication_factor' : 1 };
+CREATE KEYSPACE bsread_data WITH REPLICATION = { 'class' : 'SimpleStrategy', 'replication_factor' : 3 };
 
 USE bsread_data;
 
