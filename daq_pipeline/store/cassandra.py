@@ -21,8 +21,6 @@ class NoBatchSaveProvider(object):
 
     def __init__(self):
         self.future_cache = set()
-        self.data_cache = defaultdict(list)
-        self.cache_counter = 0
 
     def save(self, session: Session, prep_insert_statement: PreparedStatement, data):
 
