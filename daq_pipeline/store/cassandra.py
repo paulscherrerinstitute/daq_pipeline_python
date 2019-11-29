@@ -29,15 +29,6 @@ class NoBatchSaveProvider(object):
         if data is None:
             raise ValueError("Cannot save None data to Cassandra.")
 
-        for channel_data in data:
-            channel_name = channel_data[0]
-            self.data_cache[channel_name].append(channel_data)
-
-        self.cache_counter += 1
-
-        if self.cache_counter < 10:
-            return len(self.future_cache)
-
         def success_insert(results, future, pulse_id, channel_name):
             self.future_cache.remove(future)
 
@@ -49,19 +40,13 @@ class NoBatchSaveProvider(object):
             _logger.error("ERRRO IN %s. %s", channel_name, e)
 
         for channel_name, data in self.data_cache.items():
-            batch = BatchStatement(batch_type=BatchType.UNLOGGED)
 
             for pulse_data in data:
-                batch.add(prep_insert_statement, pulse_data)
+                future = session.execute_async(prep_insert_statement, pulse_data)
+                future.add_callbacks(callback=success_insert, callback_args=(future, 1, channel_name),
+                                     errback=failed_insert, errback_args=(future, 1, channel_name))
 
-            future = session.execute_async(batch)
-            future.add_callbacks(callback=success_insert, callback_args=(future, 1, channel_name),
-                                 errback=failed_insert, errback_args=(future, 1, channel_name))
-
-            self.future_cache.add(future)
-
-        self.data_cache.clear()
-        self.cache_counter = 0
+                self.future_cache.add(future)
 
         return len(self.future_cache)
 
