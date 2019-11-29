@@ -5,6 +5,7 @@ from time import time, sleep
 import numpy
 
 from daq_pipeline import config
+from daq_pipeline.receiver.utils import get_pulse_id_mod
 
 _logger = logging.getLogger('SimulatedReceiver')
 
@@ -76,6 +77,9 @@ class SimulatedReceiver(object):
 
             raw_data = self._generate_data(shape, type)
 
+            n_bytes = len(raw_data)
+            pulse_id_modulo = pulse_id // get_pulse_id_mod(n_bytes)
+
             data.append(
                 (channel_name,
                  pulse_id_modulo,
@@ -88,7 +92,7 @@ class SimulatedReceiver(object):
             )
 
             channels.append(channel_name)
-            n_data_bytes += len(raw_data)
+            n_data_bytes += n_bytes
 
         delta = (time() - self.start_time) - (self.target_read_time * self.iter_counter)
 
