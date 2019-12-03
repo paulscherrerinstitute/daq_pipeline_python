@@ -37,14 +37,12 @@ class NoBatchSaveProvider(object):
 
             _logger.error("ERRRO IN %s. %s", channel_name, e)
 
-        for channel_name, data in self.data_cache.items():
+        for pulse_data in data:
+            future = session.execute_async(prep_insert_statement, pulse_data)
+            future.add_callbacks(callback=success_insert, callback_args=(future, 1, channel_name),
+                                 errback=failed_insert, errback_args=(future, 1, channel_name))
 
-            for pulse_data in data:
-                future = session.execute_async(prep_insert_statement, pulse_data)
-                future.add_callbacks(callback=success_insert, callback_args=(future, 1, channel_name),
-                                     errback=failed_insert, errback_args=(future, 1, channel_name))
-
-                self.future_cache.add(future)
+            self.future_cache.add(future)
 
         return len(self.future_cache)
 
