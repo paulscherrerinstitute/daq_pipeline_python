@@ -1,10 +1,18 @@
-wimport json
+import argparse
+import json
 from copy import deepcopy
+
+parser = argparse.ArgumentParser()
+
+parser.add_argument('--source_file', type=str, default="sources_all.json",
+                    help='Simulated device name')
+
+args = parser.parse_args()
 
 with open("pod_template.json") as input_file:
     template = json.load(input_file)
 
-with open("../docker/sources.json") as input_file:
+with open(args.source_file) as input_file:
     data = json.load(input_file)
 
 for device in data.keys():
