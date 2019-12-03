@@ -1,0 +1,2144 @@
+{
+    "S10CB08-RLLE-PUP10": [
+        {
+            "shape": [
+                2048
+            ],
+            "source": "tcp://S10CB08-CVME-LLRF2:20000",
+            "type": "uint16",
+            "name": "S10CB08-RLLE-PUP10:SIG-AMPLT"
+        },
+        {
+            "shape": [
+                1
+            ],
+            "source": "tcp://S10CB08-CVME-LLRF2:20000",
+            "type": "float32",
+            "name": "S10CB08-RLLE-PUP10:SIG-AMPLT-AVG"
+        },
+        {
+            "shape": [
+                1
+            ],
+            "source": "tcp://S10CB08-CVME-LLRF2:20000",
+            "type": "uint32",
+            "name": "S10CB08-RLLE-PUP10:SIG-AMPLT-MAX"
+        },
+        {
+            "shape": [
+                2048
+            ],
+            "source": "tcp://S10CB08-CVME-LLRF2:20000",
+            "type": "int16",
+            "name": "S10CB08-RLLE-PUP10:SIG-PHASE"
+        },
+        {
+            "shape": [
+                1
+            ],
+            "source": "tcp://S10CB08-CVME-LLRF2:20000",
+            "type": "float32",
+            "name": "S10CB08-RLLE-PUP10:SIG-PHASE-AVG"
+        }
+    ],
+    "S10CB05-RLLE-PUP10": [
+        {
+            "shape": [
+                2048
+            ],
+            "source": "tcp://S10CB05-CVME-LLRF2:20000",
+            "type": "uint16",
+            "name": "S10CB05-RLLE-PUP10:SIG-AMPLT"
+        },
+        {
+            "shape": [
+                1
+            ],
+            "source": "tcp://S10CB05-CVME-LLRF2:20000",
+            "type": "float32",
+            "name": "S10CB05-RLLE-PUP10:SIG-AMPLT-AVG"
+        },
+        {
+            "shape": [
+                1
+            ],
+            "source": "tcp://S10CB05-CVME-LLRF2:20000",
+            "type": "uint32",
+            "name": "S10CB05-RLLE-PUP10:SIG-AMPLT-MAX"
+        },
+        {
+            "shape": [
+                2048
+            ],
+            "source": "tcp://S10CB05-CVME-LLRF2:20000",
+            "type": "int16",
+            "name": "S10CB05-RLLE-PUP10:SIG-PHASE"
+        },
+        {
+            "shape": [
+                1
+            ],
+            "source": "tcp://S10CB05-CVME-LLRF2:20000",
+            "type": "float32",
+            "name": "S10CB05-RLLE-PUP10:SIG-PHASE-AVG"
+        }
+    ],
+    "S20CB03-RLLE-REF10": [
+        {
+            "shape": [
+                2048
+            ],
+            "source": "tcp://S20CB03-CVME-LLRF2:20000",
+            "type": "uint16",
+            "name": "S20CB03-RLLE-REF10:SIG-AMPLT"
+        },
+        {
+            "shape": [
+                1
+            ],
+            "source": "tcp://S20CB03-CVME-LLRF2:20000",
+            "type": "float32",
+            "name": "S20CB03-RLLE-REF10:SIG-AMPLT-AVG"
+        },
+        {
+            "shape": [
+                1
+            ],
+            "source": "tcp://S20CB03-CVME-LLRF2:20000",
+            "type": "uint32",
+            "name": "S20CB03-RLLE-REF10:SIG-AMPLT-MAX"
+        },
+        {
+            "shape": [
+                2048
+            ],
+            "source": "tcp://S20CB03-CVME-LLRF2:20000",
+            "type": "int16",
+            "name": "S20CB03-RLLE-REF10:SIG-PHASE"
+        },
+        {
+            "shape": [
+                1
+            ],
+            "source": "tcp://S20CB03-CVME-LLRF2:20000",
+            "type": "float32",
+            "name": "S20CB03-RLLE-REF10:SIG-PHASE-AVG"
+        }
+    ],
+    "S10CB09-RLLE-REF30": [
+        {
+            "shape": [
+                2048
+            ],
+            "source": "tcp://S10CB09-CVME-LLRF2:20000",
+            "type": "uint16",
+            "name": "S10CB09-RLLE-REF30:SIG-AMPLT"
+        },
+        {
+            "shape": [
+                1
+            ],
+            "source": "tcp://S10CB09-CVME-LLRF2:20000",
+            "type": "float32",
+            "name": "S10CB09-RLLE-REF30:SIG-AMPLT-AVG"
+        },
+        {
+            "shape": [
+                1
+            ],
+            "source": "tcp://S10CB09-CVME-LLRF2:20000",
+            "type": "uint32",
+            "name": "S10CB09-RLLE-REF30:SIG-AMPLT-MAX"
+        },
+        {
+            "shape": [
+                2048
+            ],
+            "source": "tcp://S10CB09-CVME-LLRF2:20000",
+            "type": "int16",
+            "name": "S10CB09-RLLE-REF30:SIG-PHASE"
+        },
+        {
+            "shape": [
+                1
+            ],
+            "source": "tcp://S10CB09-CVME-LLRF2:20000",
+            "type": "float32",
+            "name": "S10CB09-RLLE-REF30:SIG-PHASE-AVG"
+        }
+    ],
+    "S10CB06-RLLE-PUP10": [
+        {
+            "shape": [
+                2048
+            ],
+            "source": "tcp://S10CB06-CVME-LLRF2:20000",
+            "type": "uint16",
+            "name": "S10CB06-RLLE-PUP10:SIG-AMPLT"
+        },
+        {
+            "shape": [
+                1
+            ],
+            "source": "tcp://S10CB06-CVME-LLRF2:20000",
+            "type": "float32",
+            "name": "S10CB06-RLLE-PUP10:SIG-AMPLT-AVG"
+        },
+        {
+            "shape": [
+                1
+            ],
+            "source": "tcp://S10CB06-CVME-LLRF2:20000",
+            "type": "uint32",
+            "name": "S10CB06-RLLE-PUP10:SIG-AMPLT-MAX"
+        },
+        {
+            "shape": [
+                2048
+            ],
+            "source": "tcp://S10CB06-CVME-LLRF2:20000",
+            "type": "int16",
+            "name": "S10CB06-RLLE-PUP10:SIG-PHASE"
+        },
+        {
+            "shape": [
+                1
+            ],
+            "source": "tcp://S10CB06-CVME-LLRF2:20000",
+            "type": "float32",
+            "name": "S10CB06-RLLE-PUP10:SIG-PHASE-AVG"
+        }
+    ],
+    "S10CB06-RLLE-REF40": [
+        {
+            "shape": [
+                2048
+            ],
+            "source": "tcp://S10CB06-CVME-LLRF2:20000",
+            "type": "uint16",
+            "name": "S10CB06-RLLE-REF40:SIG-AMPLT"
+        },
+        {
+            "shape": [
+                1
+            ],
+            "source": "tcp://S10CB06-CVME-LLRF2:20000",
+            "type": "float32",
+            "name": "S10CB06-RLLE-REF40:SIG-AMPLT-AVG"
+        },
+        {
+            "shape": [
+                1
+            ],
+            "source": "tcp://S10CB06-CVME-LLRF2:20000",
+            "type": "uint32",
+            "name": "S10CB06-RLLE-REF40:SIG-AMPLT-MAX"
+        },
+        {
+            "shape": [
+                2048
+            ],
+            "source": "tcp://S10CB06-CVME-LLRF2:20000",
+            "type": "int16",
+            "name": "S10CB06-RLLE-REF40:SIG-PHASE"
+        },
+        {
+            "shape": [
+                1
+            ],
+            "source": "tcp://S10CB06-CVME-LLRF2:20000",
+            "type": "float32",
+            "name": "S10CB06-RLLE-REF40:SIG-PHASE-AVG"
+        }
+    ],
+    "S20CB03-RLLE-PUP10": [
+        {
+            "shape": [
+                2048
+            ],
+            "source": "tcp://S20CB03-CVME-LLRF2:20000",
+            "type": "uint16",
+            "name": "S20CB03-RLLE-PUP10:SIG-AMPLT"
+        },
+        {
+            "shape": [
+                1
+            ],
+            "source": "tcp://S20CB03-CVME-LLRF2:20000",
+            "type": "float32",
+            "name": "S20CB03-RLLE-PUP10:SIG-AMPLT-AVG"
+        },
+        {
+            "shape": [
+                1
+            ],
+            "source": "tcp://S20CB03-CVME-LLRF2:20000",
+            "type": "uint32",
+            "name": "S20CB03-RLLE-PUP10:SIG-AMPLT-MAX"
+        },
+        {
+            "shape": [
+                2048
+            ],
+            "source": "tcp://S20CB03-CVME-LLRF2:20000",
+            "type": "int16",
+            "name": "S20CB03-RLLE-PUP10:SIG-PHASE"
+        },
+        {
+            "shape": [
+                1
+            ],
+            "source": "tcp://S20CB03-CVME-LLRF2:20000",
+            "type": "float32",
+            "name": "S20CB03-RLLE-PUP10:SIG-PHASE-AVG"
+        }
+    ],
+    "S10CB05-RLLE-REF20": [
+        {
+            "shape": [
+                2048
+            ],
+            "source": "tcp://S10CB05-CVME-LLRF2:20000",
+            "type": "uint16",
+            "name": "S10CB05-RLLE-REF20:SIG-AMPLT"
+        },
+        {
+            "shape": [
+                1
+            ],
+            "source": "tcp://S10CB05-CVME-LLRF2:20000",
+            "type": "float32",
+            "name": "S10CB05-RLLE-REF20:SIG-AMPLT-AVG"
+        },
+        {
+            "shape": [
+                1
+            ],
+            "source": "tcp://S10CB05-CVME-LLRF2:20000",
+            "type": "uint32",
+            "name": "S10CB05-RLLE-REF20:SIG-AMPLT-MAX"
+        },
+        {
+            "shape": [
+                2048
+            ],
+            "source": "tcp://S10CB05-CVME-LLRF2:20000",
+            "type": "int16",
+            "name": "S10CB05-RLLE-REF20:SIG-PHASE"
+        },
+        {
+            "shape": [
+                1
+            ],
+            "source": "tcp://S10CB05-CVME-LLRF2:20000",
+            "type": "float32",
+            "name": "S10CB05-RLLE-REF20:SIG-PHASE-AVG"
+        }
+    ],
+    "S10CB07-RLLE-REF30": [
+        {
+            "shape": [
+                2048
+            ],
+            "source": "tcp://S10CB07-CVME-LLRF2:20000",
+            "type": "uint16",
+            "name": "S10CB07-RLLE-REF30:SIG-AMPLT"
+        },
+        {
+            "shape": [
+                1
+            ],
+            "source": "tcp://S10CB07-CVME-LLRF2:20000",
+            "type": "float32",
+            "name": "S10CB07-RLLE-REF30:SIG-AMPLT-AVG"
+        },
+        {
+            "shape": [
+                1
+            ],
+            "source": "tcp://S10CB07-CVME-LLRF2:20000",
+            "type": "uint32",
+            "name": "S10CB07-RLLE-REF30:SIG-AMPLT-MAX"
+        },
+        {
+            "shape": [
+                2048
+            ],
+            "source": "tcp://S10CB07-CVME-LLRF2:20000",
+            "type": "int16",
+            "name": "S10CB07-RLLE-REF30:SIG-PHASE"
+        },
+        {
+            "shape": [
+                1
+            ],
+            "source": "tcp://S10CB07-CVME-LLRF2:20000",
+            "type": "float32",
+            "name": "S10CB07-RLLE-REF30:SIG-PHASE-AVG"
+        }
+    ],
+    "S10CB03-RLLE-REF20": [
+        {
+            "shape": [
+                2048
+            ],
+            "source": "tcp://S10CB03-CVME-LLRF2:20000",
+            "type": "uint16",
+            "name": "S10CB03-RLLE-REF20:SIG-AMPLT"
+        },
+        {
+            "shape": [
+                1
+            ],
+            "source": "tcp://S10CB03-CVME-LLRF2:20000",
+            "type": "float32",
+            "name": "S10CB03-RLLE-REF20:SIG-AMPLT-AVG"
+        },
+        {
+            "shape": [
+                1
+            ],
+            "source": "tcp://S10CB03-CVME-LLRF2:20000",
+            "type": "uint32",
+            "name": "S10CB03-RLLE-REF20:SIG-AMPLT-MAX"
+        },
+        {
+            "shape": [
+                2048
+            ],
+            "source": "tcp://S10CB03-CVME-LLRF2:20000",
+            "type": "int16",
+            "name": "S10CB03-RLLE-REF20:SIG-PHASE"
+        },
+        {
+            "shape": [
+                1
+            ],
+            "source": "tcp://S10CB03-CVME-LLRF2:20000",
+            "type": "float32",
+            "name": "S10CB03-RLLE-REF20:SIG-PHASE-AVG"
+        }
+    ],
+    "S10CB05-RLLE-REF30": [
+        {
+            "shape": [
+                2048
+            ],
+            "source": "tcp://S10CB05-CVME-LLRF2:20000",
+            "type": "uint16",
+            "name": "S10CB05-RLLE-REF30:SIG-AMPLT"
+        },
+        {
+            "shape": [
+                1
+            ],
+            "source": "tcp://S10CB05-CVME-LLRF2:20000",
+            "type": "float32",
+            "name": "S10CB05-RLLE-REF30:SIG-AMPLT-AVG"
+        },
+        {
+            "shape": [
+                1
+            ],
+            "source": "tcp://S10CB05-CVME-LLRF2:20000",
+            "type": "uint32",
+            "name": "S10CB05-RLLE-REF30:SIG-AMPLT-MAX"
+        },
+        {
+            "shape": [
+                2048
+            ],
+            "source": "tcp://S10CB05-CVME-LLRF2:20000",
+            "type": "int16",
+            "name": "S10CB05-RLLE-REF30:SIG-PHASE"
+        },
+        {
+            "shape": [
+                1
+            ],
+            "source": "tcp://S10CB05-CVME-LLRF2:20000",
+            "type": "float32",
+            "name": "S10CB05-RLLE-REF30:SIG-PHASE-AVG"
+        }
+    ],
+    "S20CB02-RLLE-REF10": [
+        {
+            "shape": [
+                2048
+            ],
+            "source": "tcp://S20CB02-CVME-LLRF2:20000",
+            "type": "uint16",
+            "name": "S20CB02-RLLE-REF10:SIG-AMPLT"
+        },
+        {
+            "shape": [
+                1
+            ],
+            "source": "tcp://S20CB02-CVME-LLRF2:20000",
+            "type": "float32",
+            "name": "S20CB02-RLLE-REF10:SIG-AMPLT-AVG"
+        },
+        {
+            "shape": [
+                1
+            ],
+            "source": "tcp://S20CB02-CVME-LLRF2:20000",
+            "type": "uint32",
+            "name": "S20CB02-RLLE-REF10:SIG-AMPLT-MAX"
+        },
+        {
+            "shape": [
+                2048
+            ],
+            "source": "tcp://S20CB02-CVME-LLRF2:20000",
+            "type": "int16",
+            "name": "S20CB02-RLLE-REF10:SIG-PHASE"
+        },
+        {
+            "shape": [
+                1
+            ],
+            "source": "tcp://S20CB02-CVME-LLRF2:20000",
+            "type": "float32",
+            "name": "S20CB02-RLLE-REF10:SIG-PHASE-AVG"
+        }
+    ],
+    "S10CB08-RLLE-REF20": [
+        {
+            "shape": [
+                2048
+            ],
+            "source": "tcp://S10CB08-CVME-LLRF2:20000",
+            "type": "uint16",
+            "name": "S10CB08-RLLE-REF20:SIG-AMPLT"
+        },
+        {
+            "shape": [
+                1
+            ],
+            "source": "tcp://S10CB08-CVME-LLRF2:20000",
+            "type": "float32",
+            "name": "S10CB08-RLLE-REF20:SIG-AMPLT-AVG"
+        },
+        {
+            "shape": [
+                1
+            ],
+            "source": "tcp://S10CB08-CVME-LLRF2:20000",
+            "type": "uint32",
+            "name": "S10CB08-RLLE-REF20:SIG-AMPLT-MAX"
+        },
+        {
+            "shape": [
+                2048
+            ],
+            "source": "tcp://S10CB08-CVME-LLRF2:20000",
+            "type": "int16",
+            "name": "S10CB08-RLLE-REF20:SIG-PHASE"
+        },
+        {
+            "shape": [
+                1
+            ],
+            "source": "tcp://S10CB08-CVME-LLRF2:20000",
+            "type": "float32",
+            "name": "S10CB08-RLLE-REF20:SIG-PHASE-AVG"
+        }
+    ],
+    "S10CB02-RLLE-REF10": [
+        {
+            "shape": [
+                2048
+            ],
+            "source": "tcp://S10CB02-CVME-LLRF2:20000",
+            "type": "uint16",
+            "name": "S10CB02-RLLE-REF10:SIG-AMPLT"
+        },
+        {
+            "shape": [
+                1
+            ],
+            "source": "tcp://S10CB02-CVME-LLRF2:20000",
+            "type": "float32",
+            "name": "S10CB02-RLLE-REF10:SIG-AMPLT-AVG"
+        },
+        {
+            "shape": [
+                1
+            ],
+            "source": "tcp://S10CB02-CVME-LLRF2:20000",
+            "type": "uint32",
+            "name": "S10CB02-RLLE-REF10:SIG-AMPLT-MAX"
+        },
+        {
+            "shape": [
+                2048
+            ],
+            "source": "tcp://S10CB02-CVME-LLRF2:20000",
+            "type": "int16",
+            "name": "S10CB02-RLLE-REF10:SIG-PHASE"
+        },
+        {
+            "shape": [
+                1
+            ],
+            "source": "tcp://S10CB02-CVME-LLRF2:20000",
+            "type": "float32",
+            "name": "S10CB02-RLLE-REF10:SIG-PHASE-AVG"
+        }
+    ],
+    "S20CB01-RLLE-REF30": [
+        {
+            "shape": [
+                2048
+            ],
+            "source": "tcp://S20CB01-CVME-LLRF2:20000",
+            "type": "uint16",
+            "name": "S20CB01-RLLE-REF30:SIG-AMPLT"
+        },
+        {
+            "shape": [
+                1
+            ],
+            "source": "tcp://S20CB01-CVME-LLRF2:20000",
+            "type": "float32",
+            "name": "S20CB01-RLLE-REF30:SIG-AMPLT-AVG"
+        },
+        {
+            "shape": [
+                1
+            ],
+            "source": "tcp://S20CB01-CVME-LLRF2:20000",
+            "type": "uint32",
+            "name": "S20CB01-RLLE-REF30:SIG-AMPLT-MAX"
+        },
+        {
+            "shape": [
+                2048
+            ],
+            "source": "tcp://S20CB01-CVME-LLRF2:20000",
+            "type": "int16",
+            "name": "S20CB01-RLLE-REF30:SIG-PHASE"
+        },
+        {
+            "shape": [
+                1
+            ],
+            "source": "tcp://S20CB01-CVME-LLRF2:20000",
+            "type": "float32",
+            "name": "S20CB01-RLLE-REF30:SIG-PHASE-AVG"
+        }
+    ],
+    "S10CB06-RLLE-REF20": [
+        {
+            "shape": [
+                2048
+            ],
+            "source": "tcp://S10CB06-CVME-LLRF2:20000",
+            "type": "uint16",
+            "name": "S10CB06-RLLE-REF20:SIG-AMPLT"
+        },
+        {
+            "shape": [
+                1
+            ],
+            "source": "tcp://S10CB06-CVME-LLRF2:20000",
+            "type": "float32",
+            "name": "S10CB06-RLLE-REF20:SIG-AMPLT-AVG"
+        },
+        {
+            "shape": [
+                1
+            ],
+            "source": "tcp://S10CB06-CVME-LLRF2:20000",
+            "type": "uint32",
+            "name": "S10CB06-RLLE-REF20:SIG-AMPLT-MAX"
+        },
+        {
+            "shape": [
+                2048
+            ],
+            "source": "tcp://S10CB06-CVME-LLRF2:20000",
+            "type": "int16",
+            "name": "S10CB06-RLLE-REF20:SIG-PHASE"
+        },
+        {
+            "shape": [
+                1
+            ],
+            "source": "tcp://S10CB06-CVME-LLRF2:20000",
+            "type": "float32",
+            "name": "S10CB06-RLLE-REF20:SIG-PHASE-AVG"
+        }
+    ],
+    "S10CB03-RLLE-REF30": [
+        {
+            "shape": [
+                2048
+            ],
+            "source": "tcp://S10CB03-CVME-LLRF2:20000",
+            "type": "uint16",
+            "name": "S10CB03-RLLE-REF30:SIG-AMPLT"
+        },
+        {
+            "shape": [
+                1
+            ],
+            "source": "tcp://S10CB03-CVME-LLRF2:20000",
+            "type": "float32",
+            "name": "S10CB03-RLLE-REF30:SIG-AMPLT-AVG"
+        },
+        {
+            "shape": [
+                1
+            ],
+            "source": "tcp://S10CB03-CVME-LLRF2:20000",
+            "type": "uint32",
+            "name": "S10CB03-RLLE-REF30:SIG-AMPLT-MAX"
+        },
+        {
+            "shape": [
+                2048
+            ],
+            "source": "tcp://S10CB03-CVME-LLRF2:20000",
+            "type": "int16",
+            "name": "S10CB03-RLLE-REF30:SIG-PHASE"
+        },
+        {
+            "shape": [
+                1
+            ],
+            "source": "tcp://S10CB03-CVME-LLRF2:20000",
+            "type": "float32",
+            "name": "S10CB03-RLLE-REF30:SIG-PHASE-AVG"
+        }
+    ],
+    "S20CB02-RLLE-PUP10": [
+        {
+            "shape": [
+                2048
+            ],
+            "source": "tcp://S20CB02-CVME-LLRF2:20000",
+            "type": "uint16",
+            "name": "S20CB02-RLLE-PUP10:SIG-AMPLT"
+        },
+        {
+            "shape": [
+                1
+            ],
+            "source": "tcp://S20CB02-CVME-LLRF2:20000",
+            "type": "float32",
+            "name": "S20CB02-RLLE-PUP10:SIG-AMPLT-AVG"
+        },
+        {
+            "shape": [
+                1
+            ],
+            "source": "tcp://S20CB02-CVME-LLRF2:20000",
+            "type": "uint32",
+            "name": "S20CB02-RLLE-PUP10:SIG-AMPLT-MAX"
+        },
+        {
+            "shape": [
+                2048
+            ],
+            "source": "tcp://S20CB02-CVME-LLRF2:20000",
+            "type": "int16",
+            "name": "S20CB02-RLLE-PUP10:SIG-PHASE"
+        },
+        {
+            "shape": [
+                1
+            ],
+            "source": "tcp://S20CB02-CVME-LLRF2:20000",
+            "type": "float32",
+            "name": "S20CB02-RLLE-PUP10:SIG-PHASE-AVG"
+        }
+    ],
+    "S20CB01-RLLE-REF10": [
+        {
+            "shape": [
+                2048
+            ],
+            "source": "tcp://S20CB01-CVME-LLRF2:20000",
+            "type": "uint16",
+            "name": "S20CB01-RLLE-REF10:SIG-AMPLT"
+        },
+        {
+            "shape": [
+                1
+            ],
+            "source": "tcp://S20CB01-CVME-LLRF2:20000",
+            "type": "float32",
+            "name": "S20CB01-RLLE-REF10:SIG-AMPLT-AVG"
+        },
+        {
+            "shape": [
+                1
+            ],
+            "source": "tcp://S20CB01-CVME-LLRF2:20000",
+            "type": "uint32",
+            "name": "S20CB01-RLLE-REF10:SIG-AMPLT-MAX"
+        },
+        {
+            "shape": [
+                2048
+            ],
+            "source": "tcp://S20CB01-CVME-LLRF2:20000",
+            "type": "int16",
+            "name": "S20CB01-RLLE-REF10:SIG-PHASE"
+        },
+        {
+            "shape": [
+                1
+            ],
+            "source": "tcp://S20CB01-CVME-LLRF2:20000",
+            "type": "float32",
+            "name": "S20CB01-RLLE-REF10:SIG-PHASE-AVG"
+        }
+    ],
+    "S10CB09-RLLE-REF40": [
+        {
+            "shape": [
+                2048
+            ],
+            "source": "tcp://S10CB09-CVME-LLRF2:20000",
+            "type": "uint16",
+            "name": "S10CB09-RLLE-REF40:SIG-AMPLT"
+        },
+        {
+            "shape": [
+                1
+            ],
+            "source": "tcp://S10CB09-CVME-LLRF2:20000",
+            "type": "float32",
+            "name": "S10CB09-RLLE-REF40:SIG-AMPLT-AVG"
+        },
+        {
+            "shape": [
+                1
+            ],
+            "source": "tcp://S10CB09-CVME-LLRF2:20000",
+            "type": "uint32",
+            "name": "S10CB09-RLLE-REF40:SIG-AMPLT-MAX"
+        },
+        {
+            "shape": [
+                2048
+            ],
+            "source": "tcp://S10CB09-CVME-LLRF2:20000",
+            "type": "int16",
+            "name": "S10CB09-RLLE-REF40:SIG-PHASE"
+        },
+        {
+            "shape": [
+                1
+            ],
+            "source": "tcp://S10CB09-CVME-LLRF2:20000",
+            "type": "float32",
+            "name": "S10CB09-RLLE-REF40:SIG-PHASE-AVG"
+        }
+    ],
+    "S10CB09-RLLE-REF10": [
+        {
+            "shape": [
+                2048
+            ],
+            "source": "tcp://S10CB09-CVME-LLRF2:20000",
+            "type": "uint16",
+            "name": "S10CB09-RLLE-REF10:SIG-AMPLT"
+        },
+        {
+            "shape": [
+                1
+            ],
+            "source": "tcp://S10CB09-CVME-LLRF2:20000",
+            "type": "float32",
+            "name": "S10CB09-RLLE-REF10:SIG-AMPLT-AVG"
+        },
+        {
+            "shape": [
+                1
+            ],
+            "source": "tcp://S10CB09-CVME-LLRF2:20000",
+            "type": "uint32",
+            "name": "S10CB09-RLLE-REF10:SIG-AMPLT-MAX"
+        },
+        {
+            "shape": [
+                2048
+            ],
+            "source": "tcp://S10CB09-CVME-LLRF2:20000",
+            "type": "int16",
+            "name": "S10CB09-RLLE-REF10:SIG-PHASE"
+        },
+        {
+            "shape": [
+                1
+            ],
+            "source": "tcp://S10CB09-CVME-LLRF2:20000",
+            "type": "float32",
+            "name": "S10CB09-RLLE-REF10:SIG-PHASE-AVG"
+        }
+    ],
+    "S10CB03-RLLE-REF10": [
+        {
+            "shape": [
+                2048
+            ],
+            "source": "tcp://S10CB03-CVME-LLRF2:20000",
+            "type": "uint16",
+            "name": "S10CB03-RLLE-REF10:SIG-AMPLT"
+        },
+        {
+            "shape": [
+                1
+            ],
+            "source": "tcp://S10CB03-CVME-LLRF2:20000",
+            "type": "float32",
+            "name": "S10CB03-RLLE-REF10:SIG-AMPLT-AVG"
+        },
+        {
+            "shape": [
+                1
+            ],
+            "source": "tcp://S10CB03-CVME-LLRF2:20000",
+            "type": "uint32",
+            "name": "S10CB03-RLLE-REF10:SIG-AMPLT-MAX"
+        },
+        {
+            "shape": [
+                2048
+            ],
+            "source": "tcp://S10CB03-CVME-LLRF2:20000",
+            "type": "int16",
+            "name": "S10CB03-RLLE-REF10:SIG-PHASE"
+        },
+        {
+            "shape": [
+                1
+            ],
+            "source": "tcp://S10CB03-CVME-LLRF2:20000",
+            "type": "float32",
+            "name": "S10CB03-RLLE-REF10:SIG-PHASE-AVG"
+        }
+    ],
+    "S10CB04-RLLE-PUP10": [
+        {
+            "shape": [
+                2048
+            ],
+            "source": "tcp://S10CB04-CVME-LLRF2:20000",
+            "type": "uint16",
+            "name": "S10CB04-RLLE-PUP10:SIG-AMPLT"
+        },
+        {
+            "shape": [
+                1
+            ],
+            "source": "tcp://S10CB04-CVME-LLRF2:20000",
+            "type": "float32",
+            "name": "S10CB04-RLLE-PUP10:SIG-AMPLT-AVG"
+        },
+        {
+            "shape": [
+                1
+            ],
+            "source": "tcp://S10CB04-CVME-LLRF2:20000",
+            "type": "uint32",
+            "name": "S10CB04-RLLE-PUP10:SIG-AMPLT-MAX"
+        },
+        {
+            "shape": [
+                2048
+            ],
+            "source": "tcp://S10CB04-CVME-LLRF2:20000",
+            "type": "int16",
+            "name": "S10CB04-RLLE-PUP10:SIG-PHASE"
+        },
+        {
+            "shape": [
+                1
+            ],
+            "source": "tcp://S10CB04-CVME-LLRF2:20000",
+            "type": "float32",
+            "name": "S10CB04-RLLE-PUP10:SIG-PHASE-AVG"
+        }
+    ],
+    "S20CB02-RLLE-REF30": [
+        {
+            "shape": [
+                2048
+            ],
+            "source": "tcp://S20CB02-CVME-LLRF2:20000",
+            "type": "uint16",
+            "name": "S20CB02-RLLE-REF30:SIG-AMPLT"
+        },
+        {
+            "shape": [
+                1
+            ],
+            "source": "tcp://S20CB02-CVME-LLRF2:20000",
+            "type": "float32",
+            "name": "S20CB02-RLLE-REF30:SIG-AMPLT-AVG"
+        },
+        {
+            "shape": [
+                1
+            ],
+            "source": "tcp://S20CB02-CVME-LLRF2:20000",
+            "type": "uint32",
+            "name": "S20CB02-RLLE-REF30:SIG-AMPLT-MAX"
+        },
+        {
+            "shape": [
+                2048
+            ],
+            "source": "tcp://S20CB02-CVME-LLRF2:20000",
+            "type": "int16",
+            "name": "S20CB02-RLLE-REF30:SIG-PHASE"
+        },
+        {
+            "shape": [
+                1
+            ],
+            "source": "tcp://S20CB02-CVME-LLRF2:20000",
+            "type": "float32",
+            "name": "S20CB02-RLLE-REF30:SIG-PHASE-AVG"
+        }
+    ],
+    "S10CB04-RLLE-REF10": [
+        {
+            "shape": [
+                2048
+            ],
+            "source": "tcp://S10CB04-CVME-LLRF2:20000",
+            "type": "uint16",
+            "name": "S10CB04-RLLE-REF10:SIG-AMPLT"
+        },
+        {
+            "shape": [
+                1
+            ],
+            "source": "tcp://S10CB04-CVME-LLRF2:20000",
+            "type": "float32",
+            "name": "S10CB04-RLLE-REF10:SIG-AMPLT-AVG"
+        },
+        {
+            "shape": [
+                1
+            ],
+            "source": "tcp://S10CB04-CVME-LLRF2:20000",
+            "type": "uint32",
+            "name": "S10CB04-RLLE-REF10:SIG-AMPLT-MAX"
+        },
+        {
+            "shape": [
+                2048
+            ],
+            "source": "tcp://S10CB04-CVME-LLRF2:20000",
+            "type": "int16",
+            "name": "S10CB04-RLLE-REF10:SIG-PHASE"
+        },
+        {
+            "shape": [
+                1
+            ],
+            "source": "tcp://S10CB04-CVME-LLRF2:20000",
+            "type": "float32",
+            "name": "S10CB04-RLLE-REF10:SIG-PHASE-AVG"
+        }
+    ],
+    "S10CB06-RLLE-REF30": [
+        {
+            "shape": [
+                2048
+            ],
+            "source": "tcp://S10CB06-CVME-LLRF2:20000",
+            "type": "uint16",
+            "name": "S10CB06-RLLE-REF30:SIG-AMPLT"
+        },
+        {
+            "shape": [
+                1
+            ],
+            "source": "tcp://S10CB06-CVME-LLRF2:20000",
+            "type": "float32",
+            "name": "S10CB06-RLLE-REF30:SIG-AMPLT-AVG"
+        },
+        {
+            "shape": [
+                1
+            ],
+            "source": "tcp://S10CB06-CVME-LLRF2:20000",
+            "type": "uint32",
+            "name": "S10CB06-RLLE-REF30:SIG-AMPLT-MAX"
+        },
+        {
+            "shape": [
+                2048
+            ],
+            "source": "tcp://S10CB06-CVME-LLRF2:20000",
+            "type": "int16",
+            "name": "S10CB06-RLLE-REF30:SIG-PHASE"
+        },
+        {
+            "shape": [
+                1
+            ],
+            "source": "tcp://S10CB06-CVME-LLRF2:20000",
+            "type": "float32",
+            "name": "S10CB06-RLLE-REF30:SIG-PHASE-AVG"
+        }
+    ],
+    "S10CB03-RLLE-PUP10": [
+        {
+            "shape": [
+                2048
+            ],
+            "source": "tcp://S10CB03-CVME-LLRF2:20000",
+            "type": "uint16",
+            "name": "S10CB03-RLLE-PUP10:SIG-AMPLT"
+        },
+        {
+            "shape": [
+                1
+            ],
+            "source": "tcp://S10CB03-CVME-LLRF2:20000",
+            "type": "float32",
+            "name": "S10CB03-RLLE-PUP10:SIG-AMPLT-AVG"
+        },
+        {
+            "shape": [
+                1
+            ],
+            "source": "tcp://S10CB03-CVME-LLRF2:20000",
+            "type": "uint32",
+            "name": "S10CB03-RLLE-PUP10:SIG-AMPLT-MAX"
+        },
+        {
+            "shape": [
+                2048
+            ],
+            "source": "tcp://S10CB03-CVME-LLRF2:20000",
+            "type": "int16",
+            "name": "S10CB03-RLLE-PUP10:SIG-PHASE"
+        },
+        {
+            "shape": [
+                1
+            ],
+            "source": "tcp://S10CB03-CVME-LLRF2:20000",
+            "type": "float32",
+            "name": "S10CB03-RLLE-PUP10:SIG-PHASE-AVG"
+        }
+    ],
+    "S20CB01-RLLE-PUP10": [
+        {
+            "shape": [
+                2048
+            ],
+            "source": "tcp://S20CB01-CVME-LLRF2:20000",
+            "type": "uint16",
+            "name": "S20CB01-RLLE-PUP10:SIG-AMPLT"
+        },
+        {
+            "shape": [
+                1
+            ],
+            "source": "tcp://S20CB01-CVME-LLRF2:20000",
+            "type": "float32",
+            "name": "S20CB01-RLLE-PUP10:SIG-AMPLT-AVG"
+        },
+        {
+            "shape": [
+                1
+            ],
+            "source": "tcp://S20CB01-CVME-LLRF2:20000",
+            "type": "uint32",
+            "name": "S20CB01-RLLE-PUP10:SIG-AMPLT-MAX"
+        },
+        {
+            "shape": [
+                2048
+            ],
+            "source": "tcp://S20CB01-CVME-LLRF2:20000",
+            "type": "int16",
+            "name": "S20CB01-RLLE-PUP10:SIG-PHASE"
+        },
+        {
+            "shape": [
+                1
+            ],
+            "source": "tcp://S20CB01-CVME-LLRF2:20000",
+            "type": "float32",
+            "name": "S20CB01-RLLE-PUP10:SIG-PHASE-AVG"
+        }
+    ],
+    "S10CB07-RLLE-REF10": [
+        {
+            "shape": [
+                2048
+            ],
+            "source": "tcp://S10CB07-CVME-LLRF2:20000",
+            "type": "uint16",
+            "name": "S10CB07-RLLE-REF10:SIG-AMPLT"
+        },
+        {
+            "shape": [
+                1
+            ],
+            "source": "tcp://S10CB07-CVME-LLRF2:20000",
+            "type": "float32",
+            "name": "S10CB07-RLLE-REF10:SIG-AMPLT-AVG"
+        },
+        {
+            "shape": [
+                1
+            ],
+            "source": "tcp://S10CB07-CVME-LLRF2:20000",
+            "type": "uint32",
+            "name": "S10CB07-RLLE-REF10:SIG-AMPLT-MAX"
+        },
+        {
+            "shape": [
+                2048
+            ],
+            "source": "tcp://S10CB07-CVME-LLRF2:20000",
+            "type": "int16",
+            "name": "S10CB07-RLLE-REF10:SIG-PHASE"
+        },
+        {
+            "shape": [
+                1
+            ],
+            "source": "tcp://S10CB07-CVME-LLRF2:20000",
+            "type": "float32",
+            "name": "S10CB07-RLLE-REF10:SIG-PHASE-AVG"
+        }
+    ],
+    "S10CB07-RLLE-REF40": [
+        {
+            "shape": [
+                2048
+            ],
+            "source": "tcp://S10CB07-CVME-LLRF2:20000",
+            "type": "uint16",
+            "name": "S10CB07-RLLE-REF40:SIG-AMPLT"
+        },
+        {
+            "shape": [
+                1
+            ],
+            "source": "tcp://S10CB07-CVME-LLRF2:20000",
+            "type": "float32",
+            "name": "S10CB07-RLLE-REF40:SIG-AMPLT-AVG"
+        },
+        {
+            "shape": [
+                1
+            ],
+            "source": "tcp://S10CB07-CVME-LLRF2:20000",
+            "type": "uint32",
+            "name": "S10CB07-RLLE-REF40:SIG-AMPLT-MAX"
+        },
+        {
+            "shape": [
+                2048
+            ],
+            "source": "tcp://S10CB07-CVME-LLRF2:20000",
+            "type": "int16",
+            "name": "S10CB07-RLLE-REF40:SIG-PHASE"
+        },
+        {
+            "shape": [
+                1
+            ],
+            "source": "tcp://S10CB07-CVME-LLRF2:20000",
+            "type": "float32",
+            "name": "S10CB07-RLLE-REF40:SIG-PHASE-AVG"
+        }
+    ],
+    "S20CB01-RLLE-REF40": [
+        {
+            "shape": [
+                2048
+            ],
+            "source": "tcp://S20CB01-CVME-LLRF2:20000",
+            "type": "uint16",
+            "name": "S20CB01-RLLE-REF40:SIG-AMPLT"
+        },
+        {
+            "shape": [
+                1
+            ],
+            "source": "tcp://S20CB01-CVME-LLRF2:20000",
+            "type": "float32",
+            "name": "S20CB01-RLLE-REF40:SIG-AMPLT-AVG"
+        },
+        {
+            "shape": [
+                1
+            ],
+            "source": "tcp://S20CB01-CVME-LLRF2:20000",
+            "type": "uint32",
+            "name": "S20CB01-RLLE-REF40:SIG-AMPLT-MAX"
+        },
+        {
+            "shape": [
+                2048
+            ],
+            "source": "tcp://S20CB01-CVME-LLRF2:20000",
+            "type": "int16",
+            "name": "S20CB01-RLLE-REF40:SIG-PHASE"
+        },
+        {
+            "shape": [
+                1
+            ],
+            "source": "tcp://S20CB01-CVME-LLRF2:20000",
+            "type": "float32",
+            "name": "S20CB01-RLLE-REF40:SIG-PHASE-AVG"
+        }
+    ],
+    "S10CB06-RLLE-REF10": [
+        {
+            "shape": [
+                2048
+            ],
+            "source": "tcp://S10CB06-CVME-LLRF2:20000",
+            "type": "uint16",
+            "name": "S10CB06-RLLE-REF10:SIG-AMPLT"
+        },
+        {
+            "shape": [
+                1
+            ],
+            "source": "tcp://S10CB06-CVME-LLRF2:20000",
+            "type": "float32",
+            "name": "S10CB06-RLLE-REF10:SIG-AMPLT-AVG"
+        },
+        {
+            "shape": [
+                1
+            ],
+            "source": "tcp://S10CB06-CVME-LLRF2:20000",
+            "type": "uint32",
+            "name": "S10CB06-RLLE-REF10:SIG-AMPLT-MAX"
+        },
+        {
+            "shape": [
+                2048
+            ],
+            "source": "tcp://S10CB06-CVME-LLRF2:20000",
+            "type": "int16",
+            "name": "S10CB06-RLLE-REF10:SIG-PHASE"
+        },
+        {
+            "shape": [
+                1
+            ],
+            "source": "tcp://S10CB06-CVME-LLRF2:20000",
+            "type": "float32",
+            "name": "S10CB06-RLLE-REF10:SIG-PHASE-AVG"
+        }
+    ],
+    "S10CB04-RLLE-REF30": [
+        {
+            "shape": [
+                2048
+            ],
+            "source": "tcp://S10CB04-CVME-LLRF2:20000",
+            "type": "uint16",
+            "name": "S10CB04-RLLE-REF30:SIG-AMPLT"
+        },
+        {
+            "shape": [
+                1
+            ],
+            "source": "tcp://S10CB04-CVME-LLRF2:20000",
+            "type": "float32",
+            "name": "S10CB04-RLLE-REF30:SIG-AMPLT-AVG"
+        },
+        {
+            "shape": [
+                1
+            ],
+            "source": "tcp://S10CB04-CVME-LLRF2:20000",
+            "type": "uint32",
+            "name": "S10CB04-RLLE-REF30:SIG-AMPLT-MAX"
+        },
+        {
+            "shape": [
+                2048
+            ],
+            "source": "tcp://S10CB04-CVME-LLRF2:20000",
+            "type": "int16",
+            "name": "S10CB04-RLLE-REF30:SIG-PHASE"
+        },
+        {
+            "shape": [
+                1
+            ],
+            "source": "tcp://S10CB04-CVME-LLRF2:20000",
+            "type": "float32",
+            "name": "S10CB04-RLLE-REF30:SIG-PHASE-AVG"
+        }
+    ],
+    "S10CB05-RLLE-REF40": [
+        {
+            "shape": [
+                2048
+            ],
+            "source": "tcp://S10CB05-CVME-LLRF2:20000",
+            "type": "uint16",
+            "name": "S10CB05-RLLE-REF40:SIG-AMPLT"
+        },
+        {
+            "shape": [
+                1
+            ],
+            "source": "tcp://S10CB05-CVME-LLRF2:20000",
+            "type": "float32",
+            "name": "S10CB05-RLLE-REF40:SIG-AMPLT-AVG"
+        },
+        {
+            "shape": [
+                1
+            ],
+            "source": "tcp://S10CB05-CVME-LLRF2:20000",
+            "type": "uint32",
+            "name": "S10CB05-RLLE-REF40:SIG-AMPLT-MAX"
+        },
+        {
+            "shape": [
+                2048
+            ],
+            "source": "tcp://S10CB05-CVME-LLRF2:20000",
+            "type": "int16",
+            "name": "S10CB05-RLLE-REF40:SIG-PHASE"
+        },
+        {
+            "shape": [
+                1
+            ],
+            "source": "tcp://S10CB05-CVME-LLRF2:20000",
+            "type": "float32",
+            "name": "S10CB05-RLLE-REF40:SIG-PHASE-AVG"
+        }
+    ],
+    "S10CB09-RLLE-REF20": [
+        {
+            "shape": [
+                2048
+            ],
+            "source": "tcp://S10CB09-CVME-LLRF2:20000",
+            "type": "uint16",
+            "name": "S10CB09-RLLE-REF20:SIG-AMPLT"
+        },
+        {
+            "shape": [
+                1
+            ],
+            "source": "tcp://S10CB09-CVME-LLRF2:20000",
+            "type": "float32",
+            "name": "S10CB09-RLLE-REF20:SIG-AMPLT-AVG"
+        },
+        {
+            "shape": [
+                1
+            ],
+            "source": "tcp://S10CB09-CVME-LLRF2:20000",
+            "type": "uint32",
+            "name": "S10CB09-RLLE-REF20:SIG-AMPLT-MAX"
+        },
+        {
+            "shape": [
+                2048
+            ],
+            "source": "tcp://S10CB09-CVME-LLRF2:20000",
+            "type": "int16",
+            "name": "S10CB09-RLLE-REF20:SIG-PHASE"
+        },
+        {
+            "shape": [
+                1
+            ],
+            "source": "tcp://S10CB09-CVME-LLRF2:20000",
+            "type": "float32",
+            "name": "S10CB09-RLLE-REF20:SIG-PHASE-AVG"
+        }
+    ],
+    "S10CB07-RLLE-REF20": [
+        {
+            "shape": [
+                2048
+            ],
+            "source": "tcp://S10CB07-CVME-LLRF2:20000",
+            "type": "uint16",
+            "name": "S10CB07-RLLE-REF20:SIG-AMPLT"
+        },
+        {
+            "shape": [
+                1
+            ],
+            "source": "tcp://S10CB07-CVME-LLRF2:20000",
+            "type": "float32",
+            "name": "S10CB07-RLLE-REF20:SIG-AMPLT-AVG"
+        },
+        {
+            "shape": [
+                1
+            ],
+            "source": "tcp://S10CB07-CVME-LLRF2:20000",
+            "type": "uint32",
+            "name": "S10CB07-RLLE-REF20:SIG-AMPLT-MAX"
+        },
+        {
+            "shape": [
+                2048
+            ],
+            "source": "tcp://S10CB07-CVME-LLRF2:20000",
+            "type": "int16",
+            "name": "S10CB07-RLLE-REF20:SIG-PHASE"
+        },
+        {
+            "shape": [
+                1
+            ],
+            "source": "tcp://S10CB07-CVME-LLRF2:20000",
+            "type": "float32",
+            "name": "S10CB07-RLLE-REF20:SIG-PHASE-AVG"
+        }
+    ],
+    "S10CB03-RLLE-REF40": [
+        {
+            "shape": [
+                2048
+            ],
+            "source": "tcp://S10CB03-CVME-LLRF2:20000",
+            "type": "uint16",
+            "name": "S10CB03-RLLE-REF40:SIG-AMPLT"
+        },
+        {
+            "shape": [
+                1
+            ],
+            "source": "tcp://S10CB03-CVME-LLRF2:20000",
+            "type": "float32",
+            "name": "S10CB03-RLLE-REF40:SIG-AMPLT-AVG"
+        },
+        {
+            "shape": [
+                1
+            ],
+            "source": "tcp://S10CB03-CVME-LLRF2:20000",
+            "type": "uint32",
+            "name": "S10CB03-RLLE-REF40:SIG-AMPLT-MAX"
+        },
+        {
+            "shape": [
+                2048
+            ],
+            "source": "tcp://S10CB03-CVME-LLRF2:20000",
+            "type": "int16",
+            "name": "S10CB03-RLLE-REF40:SIG-PHASE"
+        },
+        {
+            "shape": [
+                1
+            ],
+            "source": "tcp://S10CB03-CVME-LLRF2:20000",
+            "type": "float32",
+            "name": "S10CB03-RLLE-REF40:SIG-PHASE-AVG"
+        }
+    ],
+    "S10CB01-RLLE-REF30": [
+        {
+            "shape": [
+                2048
+            ],
+            "source": "tcp://S10CB01-CVME-LLRF2:20000",
+            "type": "uint16",
+            "name": "S10CB01-RLLE-REF30:SIG-AMPLT"
+        },
+        {
+            "shape": [
+                1
+            ],
+            "source": "tcp://S10CB01-CVME-LLRF2:20000",
+            "type": "float32",
+            "name": "S10CB01-RLLE-REF30:SIG-AMPLT-AVG"
+        },
+        {
+            "shape": [
+                1
+            ],
+            "source": "tcp://S10CB01-CVME-LLRF2:20000",
+            "type": "uint32",
+            "name": "S10CB01-RLLE-REF30:SIG-AMPLT-MAX"
+        },
+        {
+            "shape": [
+                2048
+            ],
+            "source": "tcp://S10CB01-CVME-LLRF2:20000",
+            "type": "int16",
+            "name": "S10CB01-RLLE-REF30:SIG-PHASE"
+        },
+        {
+            "shape": [
+                1
+            ],
+            "source": "tcp://S10CB01-CVME-LLRF2:20000",
+            "type": "float32",
+            "name": "S10CB01-RLLE-REF30:SIG-PHASE-AVG"
+        }
+    ],
+    "S10CB04-RLLE-REF40": [
+        {
+            "shape": [
+                2048
+            ],
+            "source": "tcp://S10CB04-CVME-LLRF2:20000",
+            "type": "uint16",
+            "name": "S10CB04-RLLE-REF40:SIG-AMPLT"
+        },
+        {
+            "shape": [
+                1
+            ],
+            "source": "tcp://S10CB04-CVME-LLRF2:20000",
+            "type": "float32",
+            "name": "S10CB04-RLLE-REF40:SIG-AMPLT-AVG"
+        },
+        {
+            "shape": [
+                1
+            ],
+            "source": "tcp://S10CB04-CVME-LLRF2:20000",
+            "type": "uint32",
+            "name": "S10CB04-RLLE-REF40:SIG-AMPLT-MAX"
+        },
+        {
+            "shape": [
+                2048
+            ],
+            "source": "tcp://S10CB04-CVME-LLRF2:20000",
+            "type": "int16",
+            "name": "S10CB04-RLLE-REF40:SIG-PHASE"
+        },
+        {
+            "shape": [
+                1
+            ],
+            "source": "tcp://S10CB04-CVME-LLRF2:20000",
+            "type": "float32",
+            "name": "S10CB04-RLLE-REF40:SIG-PHASE-AVG"
+        }
+    ],
+    "S20CB02-RLLE-REF20": [
+        {
+            "shape": [
+                2048
+            ],
+            "source": "tcp://S20CB02-CVME-LLRF2:20000",
+            "type": "uint16",
+            "name": "S20CB02-RLLE-REF20:SIG-AMPLT"
+        },
+        {
+            "shape": [
+                1
+            ],
+            "source": "tcp://S20CB02-CVME-LLRF2:20000",
+            "type": "float32",
+            "name": "S20CB02-RLLE-REF20:SIG-AMPLT-AVG"
+        },
+        {
+            "shape": [
+                1
+            ],
+            "source": "tcp://S20CB02-CVME-LLRF2:20000",
+            "type": "uint32",
+            "name": "S20CB02-RLLE-REF20:SIG-AMPLT-MAX"
+        },
+        {
+            "shape": [
+                2048
+            ],
+            "source": "tcp://S20CB02-CVME-LLRF2:20000",
+            "type": "int16",
+            "name": "S20CB02-RLLE-REF20:SIG-PHASE"
+        },
+        {
+            "shape": [
+                1
+            ],
+            "source": "tcp://S20CB02-CVME-LLRF2:20000",
+            "type": "float32",
+            "name": "S20CB02-RLLE-REF20:SIG-PHASE-AVG"
+        }
+    ],
+    "S10CB04-RLLE-REF20": [
+        {
+            "shape": [
+                2048
+            ],
+            "source": "tcp://S10CB04-CVME-LLRF2:20000",
+            "type": "uint16",
+            "name": "S10CB04-RLLE-REF20:SIG-AMPLT"
+        },
+        {
+            "shape": [
+                1
+            ],
+            "source": "tcp://S10CB04-CVME-LLRF2:20000",
+            "type": "float32",
+            "name": "S10CB04-RLLE-REF20:SIG-AMPLT-AVG"
+        },
+        {
+            "shape": [
+                1
+            ],
+            "source": "tcp://S10CB04-CVME-LLRF2:20000",
+            "type": "uint32",
+            "name": "S10CB04-RLLE-REF20:SIG-AMPLT-MAX"
+        },
+        {
+            "shape": [
+                2048
+            ],
+            "source": "tcp://S10CB04-CVME-LLRF2:20000",
+            "type": "int16",
+            "name": "S10CB04-RLLE-REF20:SIG-PHASE"
+        },
+        {
+            "shape": [
+                1
+            ],
+            "source": "tcp://S10CB04-CVME-LLRF2:20000",
+            "type": "float32",
+            "name": "S10CB04-RLLE-REF20:SIG-PHASE-AVG"
+        }
+    ],
+    "S10CB08-RLLE-REF10": [
+        {
+            "shape": [
+                2048
+            ],
+            "source": "tcp://S10CB08-CVME-LLRF2:20000",
+            "type": "uint16",
+            "name": "S10CB08-RLLE-REF10:SIG-AMPLT"
+        },
+        {
+            "shape": [
+                1
+            ],
+            "source": "tcp://S10CB08-CVME-LLRF2:20000",
+            "type": "float32",
+            "name": "S10CB08-RLLE-REF10:SIG-AMPLT-AVG"
+        },
+        {
+            "shape": [
+                1
+            ],
+            "source": "tcp://S10CB08-CVME-LLRF2:20000",
+            "type": "uint32",
+            "name": "S10CB08-RLLE-REF10:SIG-AMPLT-MAX"
+        },
+        {
+            "shape": [
+                2048
+            ],
+            "source": "tcp://S10CB08-CVME-LLRF2:20000",
+            "type": "int16",
+            "name": "S10CB08-RLLE-REF10:SIG-PHASE"
+        },
+        {
+            "shape": [
+                1
+            ],
+            "source": "tcp://S10CB08-CVME-LLRF2:20000",
+            "type": "float32",
+            "name": "S10CB08-RLLE-REF10:SIG-PHASE-AVG"
+        }
+    ],
+    "S10CB05-RLLE-REF10": [
+        {
+            "shape": [
+                2048
+            ],
+            "source": "tcp://S10CB05-CVME-LLRF2:20000",
+            "type": "uint16",
+            "name": "S10CB05-RLLE-REF10:SIG-AMPLT"
+        },
+        {
+            "shape": [
+                1
+            ],
+            "source": "tcp://S10CB05-CVME-LLRF2:20000",
+            "type": "float32",
+            "name": "S10CB05-RLLE-REF10:SIG-AMPLT-AVG"
+        },
+        {
+            "shape": [
+                1
+            ],
+            "source": "tcp://S10CB05-CVME-LLRF2:20000",
+            "type": "uint32",
+            "name": "S10CB05-RLLE-REF10:SIG-AMPLT-MAX"
+        },
+        {
+            "shape": [
+                2048
+            ],
+            "source": "tcp://S10CB05-CVME-LLRF2:20000",
+            "type": "int16",
+            "name": "S10CB05-RLLE-REF10:SIG-PHASE"
+        },
+        {
+            "shape": [
+                1
+            ],
+            "source": "tcp://S10CB05-CVME-LLRF2:20000",
+            "type": "float32",
+            "name": "S10CB05-RLLE-REF10:SIG-PHASE-AVG"
+        }
+    ],
+    "S10CB08-RLLE-REF30": [
+        {
+            "shape": [
+                2048
+            ],
+            "source": "tcp://S10CB08-CVME-LLRF2:20000",
+            "type": "uint16",
+            "name": "S10CB08-RLLE-REF30:SIG-AMPLT"
+        },
+        {
+            "shape": [
+                1
+            ],
+            "source": "tcp://S10CB08-CVME-LLRF2:20000",
+            "type": "float32",
+            "name": "S10CB08-RLLE-REF30:SIG-AMPLT-AVG"
+        },
+        {
+            "shape": [
+                1
+            ],
+            "source": "tcp://S10CB08-CVME-LLRF2:20000",
+            "type": "uint32",
+            "name": "S10CB08-RLLE-REF30:SIG-AMPLT-MAX"
+        },
+        {
+            "shape": [
+                2048
+            ],
+            "source": "tcp://S10CB08-CVME-LLRF2:20000",
+            "type": "int16",
+            "name": "S10CB08-RLLE-REF30:SIG-PHASE"
+        },
+        {
+            "shape": [
+                1
+            ],
+            "source": "tcp://S10CB08-CVME-LLRF2:20000",
+            "type": "float32",
+            "name": "S10CB08-RLLE-REF30:SIG-PHASE-AVG"
+        }
+    ],
+    "S10CB01-RLLE-REF10": [
+        {
+            "shape": [
+                2048
+            ],
+            "source": "tcp://S10CB01-CVME-LLRF2:20000",
+            "type": "uint16",
+            "name": "S10CB01-RLLE-REF10:SIG-AMPLT"
+        },
+        {
+            "shape": [
+                1
+            ],
+            "source": "tcp://S10CB01-CVME-LLRF2:20000",
+            "type": "float32",
+            "name": "S10CB01-RLLE-REF10:SIG-AMPLT-AVG"
+        },
+        {
+            "shape": [
+                1
+            ],
+            "source": "tcp://S10CB01-CVME-LLRF2:20000",
+            "type": "uint32",
+            "name": "S10CB01-RLLE-REF10:SIG-AMPLT-MAX"
+        },
+        {
+            "shape": [
+                2048
+            ],
+            "source": "tcp://S10CB01-CVME-LLRF2:20000",
+            "type": "int16",
+            "name": "S10CB01-RLLE-REF10:SIG-PHASE"
+        },
+        {
+            "shape": [
+                1
+            ],
+            "source": "tcp://S10CB01-CVME-LLRF2:20000",
+            "type": "float32",
+            "name": "S10CB01-RLLE-REF10:SIG-PHASE-AVG"
+        }
+    ],
+    "S10CB08-RLLE-REF40": [
+        {
+            "shape": [
+                2048
+            ],
+            "source": "tcp://S10CB08-CVME-LLRF2:20000",
+            "type": "uint16",
+            "name": "S10CB08-RLLE-REF40:SIG-AMPLT"
+        },
+        {
+            "shape": [
+                1
+            ],
+            "source": "tcp://S10CB08-CVME-LLRF2:20000",
+            "type": "float32",
+            "name": "S10CB08-RLLE-REF40:SIG-AMPLT-AVG"
+        },
+        {
+            "shape": [
+                1
+            ],
+            "source": "tcp://S10CB08-CVME-LLRF2:20000",
+            "type": "uint32",
+            "name": "S10CB08-RLLE-REF40:SIG-AMPLT-MAX"
+        },
+        {
+            "shape": [
+                2048
+            ],
+            "source": "tcp://S10CB08-CVME-LLRF2:20000",
+            "type": "int16",
+            "name": "S10CB08-RLLE-REF40:SIG-PHASE"
+        },
+        {
+            "shape": [
+                1
+            ],
+            "source": "tcp://S10CB08-CVME-LLRF2:20000",
+            "type": "float32",
+            "name": "S10CB08-RLLE-REF40:SIG-PHASE-AVG"
+        }
+    ],
+    "S10CB02-RLLE-REF30": [
+        {
+            "shape": [
+                2048
+            ],
+            "source": "tcp://S10CB02-CVME-LLRF2:20000",
+            "type": "uint16",
+            "name": "S10CB02-RLLE-REF30:SIG-AMPLT"
+        },
+        {
+            "shape": [
+                1
+            ],
+            "source": "tcp://S10CB02-CVME-LLRF2:20000",
+            "type": "float32",
+            "name": "S10CB02-RLLE-REF30:SIG-AMPLT-AVG"
+        },
+        {
+            "shape": [
+                1
+            ],
+            "source": "tcp://S10CB02-CVME-LLRF2:20000",
+            "type": "uint32",
+            "name": "S10CB02-RLLE-REF30:SIG-AMPLT-MAX"
+        },
+        {
+            "shape": [
+                2048
+            ],
+            "source": "tcp://S10CB02-CVME-LLRF2:20000",
+            "type": "int16",
+            "name": "S10CB02-RLLE-REF30:SIG-PHASE"
+        },
+        {
+            "shape": [
+                1
+            ],
+            "source": "tcp://S10CB02-CVME-LLRF2:20000",
+            "type": "float32",
+            "name": "S10CB02-RLLE-REF30:SIG-PHASE-AVG"
+        }
+    ],
+    "S20CB02-RLLE-REF40": [
+        {
+            "shape": [
+                2048
+            ],
+            "source": "tcp://S20CB02-CVME-LLRF2:20000",
+            "type": "uint16",
+            "name": "S20CB02-RLLE-REF40:SIG-AMPLT"
+        },
+        {
+            "shape": [
+                1
+            ],
+            "source": "tcp://S20CB02-CVME-LLRF2:20000",
+            "type": "float32",
+            "name": "S20CB02-RLLE-REF40:SIG-AMPLT-AVG"
+        },
+        {
+            "shape": [
+                1
+            ],
+            "source": "tcp://S20CB02-CVME-LLRF2:20000",
+            "type": "uint32",
+            "name": "S20CB02-RLLE-REF40:SIG-AMPLT-MAX"
+        },
+        {
+            "shape": [
+                2048
+            ],
+            "source": "tcp://S20CB02-CVME-LLRF2:20000",
+            "type": "int16",
+            "name": "S20CB02-RLLE-REF40:SIG-PHASE"
+        },
+        {
+            "shape": [
+                1
+            ],
+            "source": "tcp://S20CB02-CVME-LLRF2:20000",
+            "type": "float32",
+            "name": "S20CB02-RLLE-REF40:SIG-PHASE-AVG"
+        }
+    ],
+    "S20CB01-RLLE-REF20": [
+        {
+            "shape": [
+                2048
+            ],
+            "source": "tcp://S20CB01-CVME-LLRF2:20000",
+            "type": "uint16",
+            "name": "S20CB01-RLLE-REF20:SIG-AMPLT"
+        },
+        {
+            "shape": [
+                1
+            ],
+            "source": "tcp://S20CB01-CVME-LLRF2:20000",
+            "type": "float32",
+            "name": "S20CB01-RLLE-REF20:SIG-AMPLT-AVG"
+        },
+        {
+            "shape": [
+                1
+            ],
+            "source": "tcp://S20CB01-CVME-LLRF2:20000",
+            "type": "uint32",
+            "name": "S20CB01-RLLE-REF20:SIG-AMPLT-MAX"
+        },
+        {
+            "shape": [
+                2048
+            ],
+            "source": "tcp://S20CB01-CVME-LLRF2:20000",
+            "type": "int16",
+            "name": "S20CB01-RLLE-REF20:SIG-PHASE"
+        },
+        {
+            "shape": [
+                1
+            ],
+            "source": "tcp://S20CB01-CVME-LLRF2:20000",
+            "type": "float32",
+            "name": "S20CB01-RLLE-REF20:SIG-PHASE-AVG"
+        }
+    ],
+    "S10CB09-RLLE-PUP10": [
+        {
+            "shape": [
+                2048
+            ],
+            "source": "tcp://S10CB09-CVME-LLRF2:20000",
+            "type": "uint16",
+            "name": "S10CB09-RLLE-PUP10:SIG-AMPLT"
+        },
+        {
+            "shape": [
+                1
+            ],
+            "source": "tcp://S10CB09-CVME-LLRF2:20000",
+            "type": "float32",
+            "name": "S10CB09-RLLE-PUP10:SIG-AMPLT-AVG"
+        },
+        {
+            "shape": [
+                1
+            ],
+            "source": "tcp://S10CB09-CVME-LLRF2:20000",
+            "type": "uint32",
+            "name": "S10CB09-RLLE-PUP10:SIG-AMPLT-MAX"
+        },
+        {
+            "shape": [
+                2048
+            ],
+            "source": "tcp://S10CB09-CVME-LLRF2:20000",
+            "type": "int16",
+            "name": "S10CB09-RLLE-PUP10:SIG-PHASE"
+        },
+        {
+            "shape": [
+                1
+            ],
+            "source": "tcp://S10CB09-CVME-LLRF2:20000",
+            "type": "float32",
+            "name": "S10CB09-RLLE-PUP10:SIG-PHASE-AVG"
+        }
+    ],
+    "S10CB07-RLLE-PUP10": [
+        {
+            "shape": [
+                2048
+            ],
+            "source": "tcp://S10CB07-CVME-LLRF2:20000",
+            "type": "uint16",
+            "name": "S10CB07-RLLE-PUP10:SIG-AMPLT"
+        },
+        {
+            "shape": [
+                1
+            ],
+            "source": "tcp://S10CB07-CVME-LLRF2:20000",
+            "type": "float32",
+            "name": "S10CB07-RLLE-PUP10:SIG-AMPLT-AVG"
+        },
+        {
+            "shape": [
+                1
+            ],
+            "source": "tcp://S10CB07-CVME-LLRF2:20000",
+            "type": "uint32",
+            "name": "S10CB07-RLLE-PUP10:SIG-AMPLT-MAX"
+        },
+        {
+            "shape": [
+                2048
+            ],
+            "source": "tcp://S10CB07-CVME-LLRF2:20000",
+            "type": "int16",
+            "name": "S10CB07-RLLE-PUP10:SIG-PHASE"
+        },
+        {
+            "shape": [
+                1
+            ],
+            "source": "tcp://S10CB07-CVME-LLRF2:20000",
+            "type": "float32",
+            "name": "S10CB07-RLLE-PUP10:SIG-PHASE-AVG"
+        }
+    ]
+}
