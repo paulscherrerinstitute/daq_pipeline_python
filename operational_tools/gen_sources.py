@@ -1,10 +1,10 @@
-import json
+wimport json
 from copy import deepcopy
 
 with open("pod_template.json") as input_file:
     template = json.load(input_file)
 
-with open("../docker/test_cluster_sources.json") as input_file:
+with open("../docker/sources.json") as input_file:
     data = json.load(input_file)
 
 for device in data.keys():
