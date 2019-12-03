@@ -27,22 +27,24 @@ class NoBatchSaveProvider(object):
         if data is None:
             raise ValueError("Cannot save None data to Cassandra.")
 
-        def success_insert(results, future, pulse_id, channel_name):
-            self.future_cache.remove(future)
+        def success_insert(results, pulse_id, channel_name):
+            self.future_cache.remove((pulse_id, channel_name))
 
             _logger.debug("Inserted pulse_id=%s for channel_name=%s", pulse_id, channel_name)
 
-        def failed_insert(e, future, pulse_id, channel_name):
-            self.future_cache.remove(future)
-
+        def failed_insert(e, pulse_id, channel_name):
+            self.future_cache.remove((pulse_id, channel_name))
             _logger.error("ERRRO IN %s. %s", channel_name, e)
 
         for pulse_data in data:
-            future = session.execute_async(prep_insert_statement, pulse_data)
-            future.add_callbacks(callback=success_insert, callback_args=(future, 1, pulse_data[0]),
-                                 errback=failed_insert, errback_args=(future, 1, pulse_data[0]))
+            pulse_id = pulse_data[2]
+            channel_name = pulse_data[0]
 
-            self.future_cache.add(future)
+            future = session.execute_async(prep_insert_statement, pulse_data)
+            future.add_callbacks(callback=success_insert, callback_args=(pulse_id, channel_name),
+                                 errback=failed_insert, errback_args=(pulse_id, channel_name))
+
+            self.future_cache.add((pulse_id, channel_name))
 
         return len(self.future_cache)
 
