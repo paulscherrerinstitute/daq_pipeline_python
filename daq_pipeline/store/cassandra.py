@@ -28,12 +28,19 @@ class NoBatchSaveProvider(object):
             raise ValueError("Cannot save None data to Cassandra.")
 
         def success_insert(results, pulse_id, channel_name):
-            self.future_cache.remove((pulse_id, channel_name))
+            if (pulse_id, channel_name) in self.future_cache:
+                self.future_cache.remove((pulse_id, channel_name))
+            else:
+                _logger.warning("WTF MAN, success but no key?")
 
             _logger.debug("Inserted pulse_id=%s for channel_name=%s", pulse_id, channel_name)
 
         def failed_insert(e, pulse_id, channel_name):
-            self.future_cache.remove((pulse_id, channel_name))
+            if (pulse_id, channel_name) in self.future_cache:
+                self.future_cache.remove((pulse_id, channel_name))
+            else:
+                _logger.warning("WTF MAN, fail but no key?")
+
             _logger.error("ERRRO IN %s. %s", channel_name, e)
 
         for pulse_data in data:
