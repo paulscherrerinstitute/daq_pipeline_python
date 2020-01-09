@@ -17,6 +17,18 @@ VALUES
 """
 
 
+class SimpleSaveProvider(object):
+
+    def save(self, session: Session, prep_insert_statement: PreparedStatement, data):
+        if data is None:
+            raise ValueError("Cannot save None data to Cassandra.")
+
+        for pulse_data in data:
+            session.execute(prep_insert_statement, pulse_data)
+
+        return 0
+
+
 class NoBatchSaveProvider(object):
 
     def __init__(self):
