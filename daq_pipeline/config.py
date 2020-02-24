@@ -1,4 +1,4 @@
-CASSANDRA_CLUSTER_ADDRESSES = ['sf-nube-12', 'sf-nube-13', 'sf-nube-14']
+CASSANDRA_CLUSTER_ADDRESSES = ['sf-nube-12', 'sf-nube-13']
 MEMCACHED_ADDRESS = 'sf-nube-11'
 LOGSTASH_ADDRESS = 'http://logstash.psi.ch'
 
