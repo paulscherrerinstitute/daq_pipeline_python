@@ -20,9 +20,7 @@ def main():
     parser.add_argument('--device_name', type=str, default=device_name,
                         help='Simulated device name')
 
-    source_file = os.getenv("SOURCE_FILE", "/sources.json")
-    parser.add_argument('--source_file', type=str, default=source_file,
-                        help='Simulation sources file')
+
 
     read_time = os.getenv("READ_TIME", 0.001)
     parser.add_argument('--read_time', type=float, default=read_time,
@@ -66,7 +64,7 @@ def main():
     metadata_send_modulo = args.metadata_send_modulo
     stats_send_interval = args.stats_send_interval
 
-    logging.basicConfig(level=logging.WARNING)
+    s
     # logging.getLogger("MemcachedMetadata").setLevel(logging.DEBUG)
     # logging.getLogger("CassandraStore").setLevel(logging.DEBUG)
     # logging.getLogger("simulated_pipeline").setLevel(logging.DEBUG)
@@ -82,7 +80,7 @@ def main():
         if device_name not in sources:
             raise ValueError("device_name=%s not found in sources file." % device_name)
 
-        channels_metadata = sources[device_name]
+
         simulated_receiver = SimulatedReceiver(device_name, channels_metadata, read_time)
 
         # How many channel data inserts to batch in a single write.
@@ -115,5 +113,4 @@ def main():
         _logger.exception('Simulated pipeline %s stopped', device_name)
 
 
-if __name__ == '__main__':
-    main()
+
